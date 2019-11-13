@@ -1,0 +1,8 @@
+https://nanonets.com/
+
+https://towardsdatascience.com/ai-based-indian-license-plate-detector-de9d48ca8951
+https://towardsdatascience.com/automatic-license-plate-detection-recognition-using-deep-learning-624def07eaaf
+
+https://medium.com/nanonets/how-to-easily-detect-objects-with-deep-learning-on-raspberrypi-225f29635c74
+
+https://www.raspberrypi.org/documentation/linux/kernel/building.md
