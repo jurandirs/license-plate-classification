@@ -1,0 +1,1048 @@
+
+Memory model
+> 1. Sparse Memory (SPARSEMEM_MANUAL) (NEW)
+choice[1]: 1
+Sparse Memory virtual memmap (SPARSEMEM_VMEMMAP) [Y/n/?] (NEW) y
+Allow for memory hot-add (MEMORY_HOTPLUG) [N/y/?] (NEW) n
+Allow for memory compaction (COMPACTION) [Y/n/?] y
+  Page migration (MIGRATION) [Y/?] y
+Enable bounce buffers (BOUNCE) [Y/n/?] (NEW) y
+Enable KSM for page merging (KSM) [N/y/?] n
+Low address space to protect from user allocation (DEFAULT_MMAP_MIN_ADDR) [4096] 4096
+Enable recovery from hardware memory errors (MEMORY_FAILURE) [N/y/?] (NEW) n
+Transparent Hugepage Support (TRANSPARENT_HUGEPAGE) [N/y/?] (NEW) n
+Enable cleancache driver to cache clean pages if tmem is present (CLEANCACHE) [Y/n/?] y
+Enable frontswap to cache swap pages if tmem is present (FRONTSWAP) [Y/n/?] y
+Contiguous Memory Allocator (CMA) [Y/n/?] y
+  CMA debug messages (DEVELOPMENT) (CMA_DEBUG) [N/y/?] n
+  CMA debugfs interface (CMA_DEBUGFS) [N/y/?] n
+  Maximum count of the CMA areas (CMA_AREAS) [7] 7
+Compressed cache for swap pages (EXPERIMENTAL) (ZSWAP) [N/y/?] n
+Common API for compressed memory storage (ZPOOL) [N/m/y/?] n
+Low (Up to 2x) density storage for compressed pages (ZBUD) [N/m/y/?] n
+Memory allocator for compressed pages (ZSMALLOC) [M/n/y/?] m
+  Use page table mapping to access object in zsmalloc (PGTABLE_MAPPING) [Y/n/?] y
+  Export zsmalloc statistics (ZSMALLOC_STAT) [N/y/?] n
+Enable idle page tracking (IDLE_PAGE_TRACKING) [N/y/?] n
+Collect percpu memory statistics (PERCPU_STATS) [N/y/?] n
+Enable infrastructure for get_user_pages_fast() benchmarking (GUP_BENCHMARK) [N/y/?] n
+*
+* SPI-NOR device support
+*
+SPI-NOR device support (MTD_SPI_NOR) [M/n/?] m
+  Mediatek MT81xx SPI NOR flash controller (MTD_MT81xx_NOR) [N/m/?] n
+  Use small 4096 B erase sectors (MTD_SPI_NOR_USE_4K_SECTORS) [Y/n/?] y
+  Intel PCH/PCU SPI flash platform driver (DANGEROUS) (SPI_INTEL_SPI_PLATFORM) [N/m/?] (NEW) n
+*
+* Block devices
+*
+Block devices (BLK_DEV) [Y/n/?] y
+  Null test block driver (BLK_DEV_NULL_BLK) [N/m/y/?] n
+  Normal floppy disk support (BLK_DEV_FD) [N/m/y/?] (NEW) n
+  Compressed RAM block device support (ZRAM) [M/n/?] m
+    Write back incompressible page to backing device (ZRAM_WRITEBACK) [N/y/?] n
+    Track zRam block status (ZRAM_MEMORY_TRACKING) [N/y/?] n
+  Loopback device support (BLK_DEV_LOOP) [Y/n/m/?] y
+    Number of loop devices to pre-create at init time (BLK_DEV_LOOP_MIN_COUNT) [8] 8
+    Cryptoloop Support (BLK_DEV_CRYPTOLOOP) [M/n/y/?] m
+  DRBD Distributed Replicated Block Device support (BLK_DEV_DRBD) [M/n/y/?] m
+    DRBD fault injection (DRBD_FAULT_INJECTION) [N/y/?] n
+  Network block device support (BLK_DEV_NBD) [M/n/y/?] m
+  RAM block device support (BLK_DEV_RAM) [Y/n/m/?] y
+    Default number of RAM disks (BLK_DEV_RAM_COUNT) [16] 16
+    Default RAM disk size (kbytes) (BLK_DEV_RAM_SIZE) [4096] 4096
+  Packet writing on CD/DVD media (DEPRECATED) (CDROM_PKTCDVD) [M/n/y/?] m
+    Free buffers for data gathering (CDROM_PKTCDVD_BUFFERS) [8] 8
+    Enable write caching (CDROM_PKTCDVD_WCACHE) [N/y/?] n
+  ATA over Ethernet support (ATA_OVER_ETH) [M/n/y/?] m
+  Rados block device (RBD) (BLK_DEV_RBD) [N/m/y/?] n
+*
+* ATA/ATAPI/MFM/RLL support (DEPRECATED)
+*
+ATA/ATAPI/MFM/RLL support (DEPRECATED) (IDE) [N/m/y/?] (NEW) n
+*
+* Macintosh device drivers
+*
+Macintosh device drivers (MACINTOSH_DRIVERS) [N/y/?] (NEW) n
+*
+* Network device support
+*
+Network device support (NETDEVICES) [Y/n/?] y
+  Network core driver support (NET_CORE) [Y/n/?] y
+    Bonding driver support (BONDING) [M/n/?] m
+    Dummy net driver support (DUMMY) [M/n/y/?] m
+    EQL (serial line load balancing) support (EQUALIZER) [N/m/y/?] n
+    Intermediate Functional Block support (IFB) [M/n/y/?] m
+    MAC-VLAN support (MACVLAN) [M/n/y/?] m
+      MAC-VLAN based tap driver (MACVTAP) [N/m/?] n
+    IP-VLAN support (IPVLAN) [M/n/?] m
+      IP-VLAN based tap driver (IPVTAP) [N/m/?] n
+    Virtual eXtensible Local Area Network (VXLAN) (VXLAN) [M/n/y/?] m
+    Generic Network Virtualization Encapsulation (GENEVE) [N/m/?] n
+    GPRS Tunneling Protocol datapath (GTP-U) (GTP) [N/m/y/?] n
+    IEEE 802.1AE MAC-level encryption (MACsec) (MACSEC) [N/m/y/?] n
+    Network console logging support (NETCONSOLE) [M/n/y/?] m
+      Dynamic reconfiguration of logging targets (NETCONSOLE_DYNAMIC) [N/y/?] n
+    Universal TUN/TAP device driver support (TUN) [M/n/y/?] m
+    Support for cross-endian vnet headers on little-endian kernels (TUN_VNET_CROSS_LE) [N/y/?] n
+    Virtual ethernet pair device (VETH) [M/n/y/?] m
+    Virtual netlink monitoring device (NLMON) [N/m/y/?] n
+    Virtual Routing and Forwarding (Lite) (NET_VRF) [M/n/?] m
+  *
+  * CAIF transport drivers
+  *
+  Broadcom UniMAC MDIO bus controller (MDIO_BCM_UNIMAC) [N/m/?] n
+  Bitbanged MDIO buses (MDIO_BITBANG) [M/n/?] m
+  GPIO controlled MDIO bus multiplexers (MDIO_BUS_MUX_GPIO) [N/m/?] n
+  MMIO device-controlled MDIO bus multiplexers (MDIO_BUS_MUX_MMIOREG) [N/m/?] n
+  GPIO lib-based bitbanged MDIO buses (MDIO_GPIO) [N/m/?] n
+  Hisilicon FEMAC MDIO bus controller (MDIO_HISI_FEMAC) [N/m/?] n
+  Microsemi MIIM interface support (MDIO_MSCC_MIIM) [N/m/?] n
+  Octeon and some ThunderX SOCs MDIO buses (MDIO_OCTEON) [N/m/?] (NEW) n
+  Micrel KS8995MA 5-ports 10/100 managed Ethernet switch (MICREL_KS8995MA) [N/m/y/?] n
+  PPP (point-to-point protocol) support (PPP) [M/n/y/?] m
+    PPP BSD-Compress compression (PPP_BSDCOMP) [M/n/?] m
+    PPP Deflate compression (PPP_DEFLATE) [M/n/?] m
+    PPP filtering (PPP_FILTER) [Y/n/?] y
+    PPP MPPE compression (encryption) (PPP_MPPE) [M/n/?] m
+    PPP multilink support (PPP_MULTILINK) [Y/n/?] y
+    PPP over ATM (PPPOATM) [M/n/?] m
+    PPP over Ethernet (PPPOE) [M/n/?] m
+    PPP over IPv4 (PPTP) (PPTP) [N/m/?] n
+    PPP over L2TP (PPPOL2TP) [M/n/?] m
+    PPP support for async serial ports (PPP_ASYNC) [M/n/?] m
+    PPP support for sync tty ports (PPP_SYNC_TTY) [M/n/?] m
+  SLIP (serial line) support (SLIP) [M/n/y/?] m
+  CSLIP compressed headers (SLIP_COMPRESSED) [Y/n/?] y
+  Keepalive and linefill (SLIP_SMART) [Y/n/?] y
+  Six bit SLIP encapsulation (SLIP_MODE_SLIP6) [N/y/?] n
+  *
+  * Enable WiMAX (Networking options) to see the WiMAX drivers
+  *
+  Simulated networking device (NETDEVSIM) [N/m/y/?] n
+  Failover driver (NET_FAILOVER) [N/m/y/?] n
+*
+* Miscellaneous devices
+*
+Miscellaneous devices (INPUT_MISC) [Y/n/?] y
+  Analog Devices AD714x Capacitance Touch Sensor (INPUT_AD714X) [M/n/y/?] m
+    support I2C bus connection (INPUT_AD714X_I2C) [M/n/?] m
+    support SPI bus connection (INPUT_AD714X_SPI) [M/n/?] m
+  Atmel Capacitive Touch Button Driver (INPUT_ATMEL_CAPTOUCH) [N/m/y/?] n
+  BMA150/SMB380 acceleration sensor support (INPUT_BMA150) [N/m/y/?] n
+  NI Ettus Research USRP E3xx Button support. (INPUT_E3X0_BUTTON) [N/m/y/?] n
+  MMA8450 - Freescale's 3-Axis, 8/12-bit Digital Accelerometer (INPUT_MMA8450) [N/m/y/?] n
+  Fujitsu Lifebook Application Panel buttons (INPUT_APANEL) [N/m/y/?] (NEW) n
+  Sharp GP2AP002A00F I2C Proximity/Opto sensor driver (INPUT_GP2A) [N/m/y/?] n
+  Generic GPIO Beeper support (INPUT_GPIO_BEEPER) [N/m/y/?] n
+  Polled GPIO Decoder Input driver (INPUT_GPIO_DECODER) [N/m/y/?] n
+  ATI / Philips USB RF remote control (INPUT_ATI_REMOTE2) [M/n/y/?] m
+  Keyspan DMR USB remote control (INPUT_KEYSPAN_REMOTE) [M/n/y/?] m
+  Kionix KXTJ9 tri-axis digital accelerometer (INPUT_KXTJ9) [N/m/y/?] n
+  Griffin PowerMate and Contour Jog support (INPUT_POWERMATE) [M/n/y/?] m
+  Yealink usb-p1k voip phone (INPUT_YEALINK) [M/n/y/?] m
+  C-Media CM109 USB I/O Controller (INPUT_CM109) [M/n/y/?] m
+  Regulator haptics support (INPUT_REGULATOR_HAPTIC) [N/m/y/?] n
+  User level driver support (INPUT_UINPUT) [M/n/y/?] m
+  PCF8574 Keypad input device (INPUT_PCF8574) [N/m/y/?] n
+  PWM beeper support (INPUT_PWM_BEEPER) [N/m/y/?] n
+  PWM vibrator support (INPUT_PWM_VIBRA) [N/m/y/?] n
+  Rotary encoders connected to GPIO pins (INPUT_GPIO_ROTARY_ENCODER) [M/n/y/?] m
+  Analog Devices ADXL34x Three-Axis Digital Accelerometer (INPUT_ADXL34X) [M/n/y/?] m
+    support I2C bus connection (INPUT_ADXL34X_I2C) [M/n/?] m
+    support SPI bus connection (INPUT_ADXL34X_SPI) [M/n/?] m
+  IMS Passenger Control Unit driver (INPUT_IMS_PCU) [N/m/y/?] n
+  VTI CMA3000 Tri-axis accelerometer (INPUT_CMA3000) [M/n/y/?] m
+    Support I2C bus connection (INPUT_CMA3000_I2C) [N/m/?] n
+  IdeaPad Laptop Slidebar (INPUT_IDEAPAD_SLIDEBAR) [N/m/?] (NEW) n
+  Windows-compatible SoC Button Array (INPUT_SOC_BUTTON_ARRAY) [N/m/?] n
+  TI DRV260X haptics support (INPUT_DRV260X_HAPTICS) [N/m/y/?] n
+  TI DRV2665 haptics support (INPUT_DRV2665_HAPTICS) [N/m/y/?] n
+  TI DRV2667 haptics support (INPUT_DRV2667_HAPTICS) [N/m/y/?] n
+*
+* Hardware I/O ports
+*
+Serial I/O support (SERIO) [M/n/y/?] m
+i8042 PC Keyboard controller (SERIO_I8042) [M/n/?] (NEW) m
+Serial port line discipline (SERIO_SERPORT) [M/n/?] m
+ct82c710 Aux port controller (SERIO_CT82C710) [N/m/?] (NEW) n
+PS/2 driver library (SERIO_LIBPS2) [N/m/?] n
+Raw access to serio ports (SERIO_RAW) [M/n/?] m
+Altera UP PS/2 controller (SERIO_ALTERA_PS2) [N/m/?] n
+TQC PS/2 multiplexer (SERIO_PS2MULT) [N/m/?] n
+ARC PS/2 support (SERIO_ARC_PS2) [N/m/?] n
+GRLIB APBPS2 PS/2 keyboard/mouse controller (SERIO_APBPS2) [N/m/?] n
+GPIO PS/2 bit banging driver (SERIO_GPIO_PS2) [N/m/?] n
+User space serio port driver support (USERIO) [N/m/?] n
+Gameport support (GAMEPORT) [M/n/y/?] m
+  Classic ISA and PnP gameport support (GAMEPORT_NS558) [M/n/?] m
+  PDPI Lightning 4 gamecard support (GAMEPORT_L4) [M/n/?] m
+*
+* Hardware Random Number Generator Core support
+*
+Hardware Random Number Generator Core support (HW_RANDOM) [Y/n/m/?] y
+  Timer IOMEM HW Random Number Generator support (HW_RANDOM_TIMERIOMEM) [N/m/y/?] n
+  VIA HW Random Number Generator support (HW_RANDOM_VIA) [Y/n/m/?] (NEW) y
+*
+* Character devices
+*
+/dev/gpiomem rootless GPIO access via mmap() on the BCM2835 (BCM2835_DEVGPIOMEM) [Y/n/m/?] y
+Character device driver for the Raspberry Pi RPIVid video decoder hardware (RPIVID_MEM) [N/m/y/?] n
+Enable TTY (TTY) [Y/n/?] y
+  Virtual terminal (VT) [Y/n/?] y
+    Enable character translations in console (CONSOLE_TRANSLATIONS) [Y/n/?] y
+    Support for console on virtual terminal (VT_CONSOLE) [Y/n/?] y
+    Support for binding and unbinding console drivers (VT_HW_CONSOLE_BINDING) [Y/?] y
+  Unix98 PTY support (UNIX98_PTYS) [Y/n/?] y
+  Legacy (BSD) PTY support (LEGACY_PTYS) [N/y/?] n
+  Non-standard serial port support (SERIAL_NONSTANDARD) [N/y/?] n
+  GSM MUX line discipline support (EXPERIMENTAL) (N_GSM) [N/m/y/?] n
+  Trace data sink for MIPI P1149.7 cJTAG standard (TRACE_SINK) [N/m/y/?] n
+  Automatically load TTY Line Disciplines (LDISC_AUTOLOAD) [Y/n/?] y
+/dev/mem virtual device support (DEVMEM) [Y/n/?] y
+/dev/kmem virtual device support (DEVKMEM) [N/y/?] n
+TTY driver to output user messages via printk (TTY_PRINTK) [Y/n/m/?] y
+/dev/nvram support (NVRAM) [N/m/y/?] (NEW) n
+ACP Modem (Mwave) support (MWAVE) [N/m/y/?] (NEW) n
+RAW driver (/dev/raw/rawN) (RAW_DRIVER) [Y/n/m/?] y
+  Maximum number of RAW devices to support (1-65536) (MAX_RAW_DEVS) [256] 256
+Hangcheck timer (HANGCHECK_TIMER) [N/m/y/?] (NEW) n
+*
+* TPM Hardware Support
+*
+TPM Hardware Support (TCG_TPM) [M/n/y/?] m
+  TPM HW Random Number Generator support (HW_RANDOM_TPM) [Y/n/?] y
+  TPM Interface Specification 1.2 Interface / TPM 2.0 FIFO Interface (TCG_TIS) [N/m/?] n
+  TPM Interface Specification 1.3 Interface / TPM 2.0 FIFO Interface - (SPI) (TCG_TIS_SPI) [M/n/?] m
+  TPM Interface Specification 1.2 Interface (I2C - Atmel) (TCG_TIS_I2C_ATMEL) [N/m/?] n
+  TPM Interface Specification 1.2 Interface (I2C - Infineon) (TCG_TIS_I2C_INFINEON) [N/m/?] n
+  TPM Interface Specification 1.2 Interface (I2C - Nuvoton) (TCG_TIS_I2C_NUVOTON) [N/m/?] n
+  National Semiconductor TPM Interface (TCG_NSC) [N/m/?] (NEW) n
+  Atmel TPM Interface (TCG_ATMEL) [N/m/?] n
+  VTPM Proxy Interface (TCG_VTPM_PROXY) [N/m/?] n
+  STMicroelectronics TPM Interface Specification 1.2 Interface (I2C) (TCG_TIS_ST33ZP24_I2C) [N/m/?] n
+  STMicroelectronics TPM Interface Specification 1.2 Interface (SPI) (TCG_TIS_ST33ZP24_SPI) [N/m/?] n
+Telecom clock driver for ATCA SBC (TELCLOCK) [N/m/y/?] (NEW) n
+Xillybus generic FPGA interface (XILLYBUS) [N/m/y/?] n
+*
+* Device Drivers
+*
+Trust the CPU manufacturer to initialize Linux's CRNG (RANDOM_TRUST_CPU) [N/y/?] (NEW) n
+*
+* I2C Hardware Bus support
+*
+*
+* I2C system bus drivers (mostly embedded / system-on-chip)
+*
+CBUS I2C driver (I2C_CBUS_GPIO) [N/m/y/?] n
+Synopsys DesignWare Platform (I2C_DESIGNWARE_PLATFORM) [N/m/y/?] n
+GPIO-based bitbanging I2C (I2C_GPIO) [M/n/y/?] m
+  GPIO-based fault injector (I2C_GPIO_FAULT_INJECTOR) [N/y/?] n
+OpenCores I2C Controller (I2C_OCORES) [N/m/y/?] n
+PCA9564/PCA9665 as platform device (I2C_PCA_PLATFORM) [N/m/y/?] n
+Simtec Generic I2C interface (I2C_SIMTEC) [N/m/y/?] n
+Xilinx I2C Controller (I2C_XILINX) [N/m/y/?] n
+*
+* External I2C/SMBus adapter drivers
+*
+Diolan U2C-12 USB adapter (I2C_DIOLAN_U2C) [N/m/y/?] n
+Parallel port adapter (light) (I2C_PARPORT_LIGHT) [N/m/y/?] n
+RobotFuzz Open Source InterFace USB adapter (I2C_ROBOTFUZZ_OSIF) [M/n/y/?] m
+TAOS evaluation module (I2C_TAOS_EVM) [N/m/y/?] n
+Tiny-USB adapter (I2C_TINY_USB) [M/n/y/?] m
+*
+* Other I2C/SMBus bus drivers
+*
+Mellanox I2C driver (I2C_MLXCPLD) [N/m/y/?] (NEW) n
+*
+* Port-mapped I/O GPIO drivers
+*
+F71869, F71869A, F71882FG, F71889F and F81866 GPIO support (GPIO_F7188X) [N/m/y/?] (NEW) n
+IT87xx GPIO support (GPIO_IT87) [N/m/y/?] (NEW) n
+SMSC SCH311x SuperI/O GPIO (GPIO_SCH311X) [N/m/y/?] (NEW) n
+Winbond Super I/O GPIO support (GPIO_WINBOND) [N/m/y/?] (NEW) n
+WinSystems WS16C48 GPIO support (GPIO_WS16C48) [N/m/y/?] (NEW) n
+*
+* Hardware Monitoring support
+*
+Hardware Monitoring support (HWMON) [M/n/y/?] m
+  Hardware Monitoring Chip debugging messages (HWMON_DEBUG_CHIP) [N/y/?] n
+  *
+  * Native drivers
+  *
+  Abit uGuru (rev 1 & 2) (SENSORS_ABITUGURU) [N/m/?] (NEW) n
+  Abit uGuru (rev 3) (SENSORS_ABITUGURU3) [N/m/?] (NEW) n
+  Analog Devices AD7314 and compatibles (SENSORS_AD7314) [N/m/?] n
+  Analog Devices AD7414 (SENSORS_AD7414) [N/m/?] n
+  Analog Devices AD7416, AD7417 and AD7418 (SENSORS_AD7418) [N/m/?] n
+  Analog Devices ADM1021 and compatibles (SENSORS_ADM1021) [N/m/?] n
+  Analog Devices ADM1025 and compatibles (SENSORS_ADM1025) [N/m/?] n
+  Analog Devices ADM1026 and compatibles (SENSORS_ADM1026) [N/m/?] n
+  Analog Devices ADM1029 (SENSORS_ADM1029) [N/m/?] n
+  Analog Devices ADM1031 and compatibles (SENSORS_ADM1031) [N/m/?] n
+  Analog Devices ADM9240 and compatibles (SENSORS_ADM9240) [N/m/?] n
+  Analog Devices ADT7310/ADT7320 (SENSORS_ADT7310) [N/m/?] n
+  Analog Devices ADT7410/ADT7420 (SENSORS_ADT7410) [N/m/?] n
+  Analog Devices ADT7411 (SENSORS_ADT7411) [N/m/?] n
+  Analog Devices ADT7462 (SENSORS_ADT7462) [N/m/?] n
+  Analog Devices ADT7470 (SENSORS_ADT7470) [N/m/?] n
+  Analog Devices ADT7473, ADT7475, ADT7476 and ADT7490 (SENSORS_ADT7475) [N/m/?] n
+  Andigilog aSC7621 (SENSORS_ASC7621) [N/m/?] n
+  Apple SMC (Motion sensor, light sensor, keyboard backlight) (SENSORS_APPLESMC) [N/m/?] (NEW) n
+  Asus ASB100 Bach (SENSORS_ASB100) [N/m/?] (NEW) n
+  ASPEED AST2400/AST2500 PWM and Fan tach driver (SENSORS_ASPEED) [N/m/?] n
+  Attansic ATXP1 VID controller (SENSORS_ATXP1) [N/m/?] n
+  Dallas Semiconductor DS620 (SENSORS_DS620) [N/m/?] n
+  Dallas Semiconductor DS1621 and compatibles (SENSORS_DS1621) [M/n/?] m
+  Dell laptop SMM BIOS hwmon driver (SENSORS_DELL_SMM) [N/m/?] (NEW) n
+  Fintek F71805F/FG, F71806F/FG and F71872F/FG (SENSORS_F71805F) [N/m/?] n
+  Fintek F71882FG and compatibles (SENSORS_F71882FG) [N/m/?] n
+  Fintek F75375S/SP, F75373 and F75387 (SENSORS_F75375S) [N/m/?] n
+  Fujitsu Siemens Computers sensor chips (SENSORS_FSCHMD) [N/m/?] (NEW) n
+  Fujitsu Technology Solutions sensor chip Teutates (SENSORS_FTSTEUTATES) [N/m/?] n
+  Genesys Logic GL518SM (SENSORS_GL518SM) [N/m/?] n
+  Genesys Logic GL520SM (SENSORS_GL520SM) [N/m/?] n
+  GMT G760A (SENSORS_G760A) [N/m/?] n
+  GMT G762 and G763 (SENSORS_G762) [N/m/?] n
+  GPIO fan (SENSORS_GPIO_FAN) [M/n/?] m
+  Honeywell Humidicon HIH-6130 humidity/temperature sensor (SENSORS_HIH6130) [N/m/?] n
+  Hwmon driver that uses channels specified via iio maps (SENSORS_IIO_HWMON) [N/m/?] n
+  Intel Core/Core2/Atom temperature sensor (SENSORS_CORETEMP) [N/m/?] (NEW) n
+  ITE IT87xx and compatibles (SENSORS_IT87) [N/m/?] n
+  JEDEC JC42.4 compliant memory module temperature sensors (SENSORS_JC42) [M/n/?] m
+  Lattice POWR1220 Power Monitoring (SENSORS_POWR1220) [N/m/?] n
+  Lineage Compact Power Line Power Entry Module (SENSORS_LINEAGE) [N/m/?] n
+  Linear Technology LTC2945 (SENSORS_LTC2945) [N/m/?] n
+  Linear Technology LTC2990 (SENSORS_LTC2990) [N/m/?] n
+  Linear Technology LTC4151 (SENSORS_LTC4151) [N/m/?] n
+  Linear Technology LTC4215 (SENSORS_LTC4215) [N/m/?] n
+  Linear Technology LTC4222 (SENSORS_LTC4222) [N/m/?] n
+  Linear Technology LTC4245 (SENSORS_LTC4245) [N/m/?] n
+  Linear Technology LTC4260 (SENSORS_LTC4260) [N/m/?] n
+  Linear Technology LTC4261 (SENSORS_LTC4261) [N/m/?] n
+  Maxim MAX1111 Serial 8-bit ADC chip and compatibles (SENSORS_MAX1111) [N/m/?] n
+  Maxim MAX16065 System Manager and compatibles (SENSORS_MAX16065) [N/m/?] n
+  Maxim MAX1619 sensor chip (SENSORS_MAX1619) [N/m/?] n
+  Maxim MAX1668 and compatibles (SENSORS_MAX1668) [N/m/?] n
+  Maxim MAX197 and compatibles (SENSORS_MAX197) [N/m/?] n
+  MAX31722 temperature sensor (SENSORS_MAX31722) [N/m/?] n
+  Maxim MAX6621 sensor chip (SENSORS_MAX6621) [N/m/?] n
+  Maxim MAX6639 sensor chip (SENSORS_MAX6639) [N/m/?] n
+  Maxim MAX6642 sensor chip (SENSORS_MAX6642) [N/m/?] n
+  Maxim MAX6650 sensor chip (SENSORS_MAX6650) [N/m/?] n
+  Maxim MAX6697 and compatibles (SENSORS_MAX6697) [N/m/?] n
+  Maxim MAX31790 sensor chip (SENSORS_MAX31790) [N/m/?] n
+  Microchip MCP3021 and compatibles (SENSORS_MCP3021) [N/m/?] n
+  Microchip TC654/TC655 and compatibles (SENSORS_TC654) [N/m/?] n
+  National Semiconductor ADCxxxSxxx (SENSORS_ADCXX) [N/m/?] n
+  National Semiconductor LM63 and compatibles (SENSORS_LM63) [N/m/?] n
+  National Semiconductor LM70 and compatibles (SENSORS_LM70) [N/m/?] n
+  National Semiconductor LM73 (SENSORS_LM73) [N/m/?] n
+  National Semiconductor LM75 and compatibles (SENSORS_LM75) [M/n/?] m
+  National Semiconductor LM77 (SENSORS_LM77) [N/m/?] n
+  National Semiconductor LM78 and compatibles (SENSORS_LM78) [N/m/?] n
+  National Semiconductor LM80 and LM96080 (SENSORS_LM80) [N/m/?] n
+  National Semiconductor LM83 and compatibles (SENSORS_LM83) [N/m/?] n
+  National Semiconductor LM85 and compatibles (SENSORS_LM85) [N/m/?] n
+  National Semiconductor LM87 and compatibles (SENSORS_LM87) [N/m/?] n
+  National Semiconductor LM90 and compatibles (SENSORS_LM90) [N/m/?] n
+  National Semiconductor LM92 and compatibles (SENSORS_LM92) [N/m/?] n
+  National Semiconductor LM93 and compatibles (SENSORS_LM93) [N/m/?] n
+  National Semiconductor LM95234 and compatibles (SENSORS_LM95234) [N/m/?] n
+  National Semiconductor LM95241 and compatibles (SENSORS_LM95241) [N/m/?] n
+  National Semiconductor LM95245 and compatibles (SENSORS_LM95245) [N/m/?] n
+  National Semiconductor PC87360 family (SENSORS_PC87360) [N/m/?] n
+  National Semiconductor PC87427 (SENSORS_PC87427) [N/m/?] n
+  NTC thermistor support from Murata (SENSORS_NTC_THERMISTOR) [N/m/?] n
+  Nuvoton NCT6683D (SENSORS_NCT6683) [N/m/?] n
+  Nuvoton NCT6775F and compatibles (SENSORS_NCT6775) [N/m/?] n
+  Nuvoton NCT7802Y (SENSORS_NCT7802) [N/m/?] n
+  Nuvoton NCT7904 (SENSORS_NCT7904) [N/m/?] n
+  Nuvoton NPCM750 and compatible PWM and Fan controllers (SENSORS_NPCM7XX) [N/m/?] n
+  Philips PCF8591 ADC/DAC (SENSORS_PCF8591) [N/m/?] n
+  PWM fan (SENSORS_PWM_FAN) [N/m/?] n
+  Sensiron humidity and temperature sensors. SHT15 and compat. (SENSORS_SHT15) [N/m/?] n
+  Sensiron humidity and temperature sensors. SHT21 and compat. (SENSORS_SHT21) [M/n/?] m
+  Sensiron humidity and temperature sensors. SHT3x and compat. (SENSORS_SHT3x) [M/n/?] m
+  Sensiron humidity and temperature sensors. SHTC1 and compat. (SENSORS_SHTC1) [M/n/?] m
+  SMSC DME1737, SCH311x and compatibles (SENSORS_DME1737) [N/m/?] n
+  SMSC EMC1403/23 thermal sensor (SENSORS_EMC1403) [N/m/?] n
+  SMSC EMC2103 (SENSORS_EMC2103) [N/m/?] n
+  SMSC EMC6W201 (SENSORS_EMC6W201) [N/m/?] n
+  SMSC LPC47M10x and compatibles (SENSORS_SMSC47M1) [N/m/?] n
+  SMSC LPC47M192 and compatibles (SENSORS_SMSC47M192) [N/m/?] n
+  SMSC LPC47B397-NC (SENSORS_SMSC47B397) [N/m/?] n
+  SMSC SCH5627 (SENSORS_SCH5627) [N/m/?] n
+  SMSC SCH5636 (SENSORS_SCH5636) [N/m/?] n
+  ST Microelectronics STTS751 (SENSORS_STTS751) [N/m/?] n
+  Summit Microelectronics SMM665 (SENSORS_SMM665) [N/m/?] n
+  Texas Instruments ADC128D818 (SENSORS_ADC128D818) [N/m/?] n
+  Texas Instruments ADS1015 (SENSORS_ADS1015) [M/n/?] m
+  Texas Instruments ADS7828 and compatibles (SENSORS_ADS7828) [N/m/?] n
+  Texas Instruments ADS7871 A/D converter (SENSORS_ADS7871) [N/m/?] n
+  Texas Instruments AMC6821 (SENSORS_AMC6821) [N/m/?] n
+  TI / Burr Brown INA209 (SENSORS_INA209) [N/m/?] n
+  Texas Instruments INA219 and compatibles (SENSORS_INA2XX) [M/n/?] m
+  Texas Instruments INA3221 Triple Power Monitor (SENSORS_INA3221) [N/m/?] n
+  Microchip TC74 (SENSORS_TC74) [N/m/?] n
+  Texas Instruments THMC50 / Analog Devices ADM1022 (SENSORS_THMC50) [N/m/?] n
+  Texas Instruments TMP102 (SENSORS_TMP102) [M/n/?] m
+  Texas Instruments TMP103 (SENSORS_TMP103) [N/m/?] n
+  Texas Instruments TMP108 (SENSORS_TMP108) [N/m/?] n
+  Texas Instruments TMP401 and compatibles (SENSORS_TMP401) [N/m/?] n
+  Texas Instruments TMP421 and compatible (SENSORS_TMP421) [N/m/?] n
+  VIA CPU temperature sensor (SENSORS_VIA_CPUTEMP) [N/m/?] (NEW) n
+  VIA VT1211 (SENSORS_VT1211) [N/m/?] n
+  Nuvoton W83773G (SENSORS_W83773G) [N/m/?] n
+  Winbond W83781D, W83782D, W83783S, Asus AS99127F (SENSORS_W83781D) [N/m/?] n
+  Winbond W83791D (SENSORS_W83791D) [N/m/?] n
+  Winbond W83792D (SENSORS_W83792D) [N/m/?] n
+  Winbond W83793 (SENSORS_W83793) [N/m/?] n
+  Winbond/Nuvoton W83795G/ADG (SENSORS_W83795) [N/m/?] n
+  Winbond W83L785TS-S (SENSORS_W83L785TS) [N/m/?] n
+  Winbond W83L786NG, W83L786NR (SENSORS_W83L786NG) [N/m/?] n
+  Winbond W83627HF, W83627THF, W83637HF, W83687THF, W83697HF (SENSORS_W83627HF) [N/m/?] n
+  Winbond W83627EHF/EHG/DHG/UHG, W83667HG, NCT6775F, NCT6776F (SENSORS_W83627EHF) [N/m/?] n
+*
+* Generic Thermal sysfs driver
+*
+Generic Thermal sysfs driver (THERMAL) [Y/n/m/?] y
+  Thermal state transition statistics (THERMAL_STATISTICS) [N/y/?] n
+  Emergency poweroff delay in milli-seconds (THERMAL_EMERGENCY_POWEROFF_DELAY_MS) [0] 0
+  APIs to parse thermal data out of device tree (THERMAL_OF) [Y/n/?] y
+  Enable writable trip points (THERMAL_WRITABLE_TRIPS) [Y/?] y
+  Default Thermal governor
+  > 1. step_wise (THERMAL_DEFAULT_GOV_STEP_WISE)
+    2. fair_share (THERMAL_DEFAULT_GOV_FAIR_SHARE)
+    3. user_space (THERMAL_DEFAULT_GOV_USER_SPACE)
+    4. power_allocator (THERMAL_DEFAULT_GOV_POWER_ALLOCATOR)
+  choice[1-4?]: 1
+  Fair-share thermal governor (THERMAL_GOV_FAIR_SHARE) [N/y/?] n
+  Step_wise thermal governor (THERMAL_GOV_STEP_WISE) [Y/?] y
+  Bang Bang thermal governor (THERMAL_GOV_BANG_BANG) [N/y/?] n
+  User_space thermal governor (THERMAL_GOV_USER_SPACE) [Y/?] y
+  Power allocator thermal governor (THERMAL_GOV_POWER_ALLOCATOR) [N/y/?] n
+  generic cpu cooling support (CPU_THERMAL) [N/y/?] n
+  Thermal emulation mode support (THERMAL_EMULATION) [N/y/?] n
+  QorIQ Thermal Monitoring Unit (QORIQ_THERMAL) [N/m/y/?] n
+  Intel PowerClamp idle injection driver (INTEL_POWERCLAMP) [N/m/y/?] (NEW) n
+  X86 package temperature thermal driver (X86_PKG_TEMP_THERMAL) [M/n/y/?] (NEW) n
+  Generic ADC based thermal sensor (GENERIC_ADC_THERMAL) [N/m/?] n
+*
+* Watchdog Timer Support
+*
+Watchdog Timer Support (WATCHDOG) [Y/n/?] y
+  WatchDog Timer Driver Core (WATCHDOG_CORE) [Y/?] y
+  Disable watchdog shutdown on close (WATCHDOG_NOWAYOUT) [N/y/?] n
+  Update boot-enabled watchdog until userspace takes over (WATCHDOG_HANDLE_BOOT_ENABLED) [Y/n/?] y
+  Read different watchdog information through sysfs (WATCHDOG_SYSFS) [N/y/?] n
+  *
+  * Watchdog Device Drivers
+  *
+  Software watchdog (SOFT_WATCHDOG) [N/m/y/?] n
+  Watchdog device controlled through GPIO-line (GPIO_WATCHDOG) [M/n/y/?] m
+  Xilinx Watchdog timer (XILINX_WATCHDOG) [N/m/y/?] n
+  Zodiac RAVE Watchdog Timer (ZIIRAVE_WATCHDOG) [N/m/y/?] n
+  Cadence Watchdog Timer (CADENCE_WATCHDOG) [N/m/y/?] n
+  Synopsys DesignWare watchdog (DW_WATCHDOG) [N/m/y/?] n
+  Max63xx watchdog (MAX63XX_WATCHDOG) [N/m/y/?] n
+  Acquire SBC Watchdog Timer (ACQUIRE_WDT) [N/m/y/?] (NEW) n
+  Advantech SBC Watchdog Timer (ADVANTECH_WDT) [N/m/y/?] (NEW) n
+  WinSystems EBC-C384 Watchdog Timer (EBC_C384_WDT) [N/m/y/?] (NEW) n
+  Fintek F718xx, F818xx Super I/O Watchdog (F71808E_WDT) [N/m/y/?] (NEW) n
+  Compulab SBC-FITPC2 watchdog (SBC_FITPC2_WATCHDOG) [N/m/y/?] (NEW) n
+  Eurotech CPU-1220/1410 Watchdog Timer (EUROTECH_WDT) [N/m/y/?] (NEW) n
+  IB700 SBC Watchdog Timer (IB700_WDT) [N/m/y/?] (NEW) n
+  IBM Automatic Server Restart (IBMASR) [N/m/y/?] (NEW) n
+  ICP Single Board Computer Watchdog Timer (WAFER_WDT) [N/m/y/?] (NEW) n
+  IT8712F (Smart Guardian) Watchdog Timer (IT8712F_WDT) [N/m/y/?] (NEW) n
+  IT87 Watchdog Timer (IT87_WDT) [N/m/y/?] (NEW) n
+  National Semiconductor PC87307/PC97307 (ala SC1200) Watchdog (SC1200_WDT) [N/m/y/?] (NEW) n
+  NS PC87413 watchdog (PC87413_WDT) [N/m/y/?] (NEW) n
+  SBC-60XX Watchdog Timer (60XX_WDT) [N/m/y/?] (NEW) n
+  SMA CPU5 Watchdog (CPU5_WDT) [N/m/y/?] (NEW) n
+  SMSC SCH311X Watchdog Timer (SMSC_SCH311X_WDT) [N/m/y/?] (NEW) n
+  Winbond SMsC37B787 Watchdog Timer (SMSC37B787_WDT) [N/m/y/?] (NEW) n
+  Watchdog timer for W83627HF/W83627DHG and compatibles (W83627HF_WDT) [N/m/y/?] (NEW) n
+  W83877F (EMACS) Watchdog Timer (W83877F_WDT) [N/m/y/?] (NEW) n
+  W83977F (PCM-5335) Watchdog Timer (W83977F_WDT) [N/m/y/?] (NEW) n
+  ZF MachZ Watchdog (MACHZ_WDT) [N/m/y/?] (NEW) n
+  Winsystems SBC EPX-C3 watchdog (SBC_EPX_C3_WATCHDOG) [N/m/y/?] (NEW) n
+  MEN A21 VME CPU Carrier Board Watchdog Timer (MEN_A21_WDT) [N/m/y/?] n
+  *
+  * USB-based Watchdog Cards
+  *
+  Berkshire Products USB-PC Watchdog (USBPCWATCHDOG) [N/m/y/?] n
+  *
+  * Watchdog Pretimeout Governors
+  *
+  Enable watchdog pretimeout governors (WATCHDOG_PRETIMEOUT_GOV) [N/y/?] n
+*
+* Frame buffer Devices
+*
+Enable Video Mode Handling Helpers (FB_MODE_HELPERS) [Y/?] y
+Enable Tile Blitting Support (FB_TILEBLITTING) [N/y/?] n
+*
+* Frame buffer hardware drivers
+*
+Arc Monochrome LCD board support (FB_ARC) [N/m/y/?] (NEW) n
+VGA 16-color graphics support (FB_VGA16) [N/m/y/?] (NEW) n
+Userspace VESA VGA graphics support (FB_UVESA) [N/m/?] n
+VESA VGA graphics support (FB_VESA) [N/y/?] (NEW) n
+N411 Apollo/Hecuba devkit support (FB_N411) [N/m/y/?] (NEW) n
+Hercules mono graphics support (FB_HGA) [N/m/y/?] (NEW) n
+OpenCores VGA/LCD core 2.0 framebuffer support (FB_OPENCORES) [N/m/y/?] n
+Epson S1D13XXX framebuffer support (FB_S1D13XXX) [N/m/y/?] n
+SMSC UFX6000/7000 USB Framebuffer support (FB_SMSCUFX) [N/m/y/?] n
+Displaylink USB Framebuffer support (FB_UDL) [M/n/y/?] m
+Framebuffer support for IBM GXT4000P/4500P/6000P/6500P adaptors (FB_IBM_GXT4500) [N/m/y/?] n
+Virtual Frame Buffer support (ONLY FOR TESTING!) (FB_VIRTUAL) [N/m/y/?] n
+E-Ink Metronome/8track controller support (FB_METRONOME) [N/m/y/?] n
+E-Ink Broadsheet/Epson S1D13521 controller support (FB_BROADSHEET) [N/m/y/?] n
+Simple framebuffer support (FB_SIMPLE) [Y/n/?] y
+Solomon SSD1307 framebuffer support (FB_SSD1307) [M/n/y/?] m
+Raspberry Pi Sense HAT framebuffer (FB_RPISENSE) [M/n/y/?] m
+*
+* Backlight & LCD device support
+*
+Backlight & LCD device support (BACKLIGHT_LCD_SUPPORT) [Y/?] y
+  Lowlevel LCD controls (LCD_CLASS_DEVICE) [M/n/y/?] m
+    Epson L4F00242T03 LCD (LCD_L4F00242T03) [N/m/?] n
+    Samsung LMS283GF05 LCD (LCD_LMS283GF05) [N/m/?] n
+    Samsung LTV350QV LCD Panel (LCD_LTV350QV) [N/m/?] n
+    ILI Technology ILI9221/ILI9222 support (LCD_ILI922X) [N/m/?] n
+    ILI Technology ILI9320 controller support (LCD_ILI9320) [N/m/?] n
+    Toppoly TDO24M  and TDO35S LCD Panels support (LCD_TDO24M) [N/m/?] n
+    VGG2432A4 LCM device support (LCD_VGG2432A4) [N/m/?] n
+    Platform LCD controls (LCD_PLATFORM) [N/m/?] n
+    S6E63M0 AMOLED LCD Driver (LCD_S6E63M0) [N/m/?] n
+    LD9040 AMOLED LCD Driver (LCD_LD9040) [N/m/?] n
+    AMS369FG06 AMOLED LCD Driver (LCD_AMS369FG06) [N/m/?] n
+    LMS501KF03 LCD Driver (LCD_LMS501KF03) [N/m/?] n
+    Himax HX-8357 LCD Driver (LCD_HX8357) [N/m/?] n
+    ORISE Technology OTM3225A support (LCD_OTM3225A) [N/m/?] n
+  Lowlevel Backlight controls (BACKLIGHT_CLASS_DEVICE) [Y/?] y
+    Generic (aka Sharp Corgi) Backlight Driver (BACKLIGHT_GENERIC) [N/m/y/?] n
+    Generic PWM based Backlight Driver (BACKLIGHT_PWM) [N/m/y/?] n
+    Qualcomm PM8941 WLED Driver (BACKLIGHT_PM8941_WLED) [N/m/y/?] n
+    Tabletkiosk Sahara Touch-iT Backlight Driver (BACKLIGHT_SAHARA) [N/m/y/?] (NEW) n
+    Backlight Driver for ADP8860/ADP8861/ADP8863 using WLED (BACKLIGHT_ADP8860) [N/m/y/?] n
+    Backlight Driver for ADP8870 using WLED (BACKLIGHT_ADP8870) [N/m/y/?] n
+    Backlight Driver for LM3630A (BACKLIGHT_LM3630A) [N/m/y/?] n
+    Backlight Driver for LM3639 (BACKLIGHT_LM3639) [N/m/y/?] n
+    Backlight driver for TI LP855X (BACKLIGHT_LP855X) [N/m/y/?] n
+    Generic GPIO based Backlight Driver (BACKLIGHT_GPIO) [M/n/y/?] m
+    Sanyo LV5207LP Backlight (BACKLIGHT_LV5207LP) [N/m/y/?] n
+    Rohm BD6107 Backlight (BACKLIGHT_BD6107) [N/m/y/?] n
+    Backlight driver for the Arctic Sands ARCxCnnnn family (BACKLIGHT_ARCXCNN) [N/m/y/?] n
+*
+* Console display driver support
+*
+VGA text console (VGA_CONSOLE) [Y/n/?] (NEW) y
+  Enable Scrollback Buffer in System RAM (VGACON_SOFT_SCROLLBACK) [N/y/?] (NEW) n
+Initial number of console screen columns (DUMMY_CONSOLE_COLUMNS) [80] (NEW) 
+Initial number of console screen rows (DUMMY_CONSOLE_ROWS) [25] (NEW) 
+Framebuffer Console support (FRAMEBUFFER_CONSOLE) [Y/n/?] y
+  Map the console to the primary display device (FRAMEBUFFER_CONSOLE_DETECT_PRIMARY) [Y/?] y
+  Framebuffer Console Rotation (FRAMEBUFFER_CONSOLE_ROTATION) [Y/n/?] y
+  Framebuffer Console Deferred Takeover (FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER) [N/y/?] n
+*
+* MMC/SD/SDIO card support
+*
+MMC/SD/SDIO card support (MMC) [Y/n/m/?] y
+  HW reset support for eMMC (PWRSEQ_EMMC) [Y/n/m/?] y
+  HW reset support for SD8787 BT + Wifi module (PWRSEQ_SD8787) [N/m/?] n
+  Simple HW reset support for MMC (PWRSEQ_SIMPLE) [Y/n/m/?] y
+  MMC block device driver (MMC_BLOCK) [Y/n/m/?] y
+    Number of minors per block device (MMC_BLOCK_MINORS) [32] 32
+  SDIO UART/GPS class support (SDIO_UART) [N/m/y/?] n
+  MMC host test driver (MMC_TEST) [N/m/y/?] n
+  *
+  * MMC/SD/SDIO Host Controller Drivers
+  *
+  MMC host drivers debugging (MMC_DEBUG) [N/y/?] n
+  Secure Digital Host Controller Interface support (MMC_SDHCI) [Y/n/m/?] y
+    SDHCI platform and OF driver helper (MMC_SDHCI_PLTFM) [Y/n/m/?] y
+      SDHCI OF support for the Atmel SDMMC controller (MMC_SDHCI_OF_AT91) [N/m/y/?] n
+      SDHCI support for the Cadence SD/SDIO/eMMC controller (MMC_SDHCI_CADENCE) [N/m/y/?] n
+  SDHCI support for Fujitsu Semiconductor F_SDH30 (MMC_SDHCI_F_SDH30) [N/m/y/?] n
+  Winbond W83L51xD SD/MMC Card Interface support (MMC_WBSD) [N/m/y/?] (NEW) n
+  MMC/SD/SDIO over SPI (MMC_SPI) [M/n/y/?] m
+  VUB300 USB to SDIO/SD/MMC Host Controller support (MMC_VUB300) [N/m/y/?] n
+  USB SD Host Controller (USHC) support (MMC_USHC) [N/m/y/?] n
+  Renesas USDHI6ROL0 SD/SDIO Host Controller support (MMC_USDHI6ROL0) [N/m/y/?] n
+  Command Queue Host Controller Interface support (MMC_CQHCI) [N/m/y/?] n
+  MediaTek SD/MMC Card Interface support (MMC_MTK) [N/m/y/?] n
+  Marvell Xenon eMMC/SD/SDIO SDHCI driver (MMC_SDHCI_XENON) [N/m/y/?] n
+  TI SDHCI Controller Support (MMC_SDHCI_OMAP) [N/m/y/?] n
+*
+* LED Support
+*
+LED Support (NEW_LEDS) [Y/?] y
+  LED Class Support (LEDS_CLASS) [Y/m/?] y
+    LED Flash Class Support (LEDS_CLASS_FLASH) [N/m/y/?] n
+    LED Class brightness_hw_changed attribute support (LEDS_BRIGHTNESS_HW_CHANGED) [N/y/?] n
+  *
+  * LED drivers
+  *
+  Front panel LED support for PC Engines APU/APU2/APU3 boards (LEDS_APU) [N/m/y/?] (NEW) n
+  LED Support for Broadcom BCM6328 (LEDS_BCM6328) [N/m/y/?] n
+  LED Support for Broadcom BCM6358 (LEDS_BCM6358) [N/m/y/?] n
+  LED Support for Crane CR0014114 (LEDS_CR0014114) [N/m/y/?] n
+  LCD Backlight driver for LM3530 (LEDS_LM3530) [N/m/y/?] n
+  LED support for LM3642 Chip (LEDS_LM3642) [N/m/y/?] n
+  LED support for LM3692x Chips (LEDS_LM3692X) [N/m/y/?] n
+  LED driver for PCA9532 dimmer (LEDS_PCA9532) [M/n/y/?] m
+    Enable GPIO support for PCA9532 (LEDS_PCA9532_GPIO) [N/y/?] n
+  LED Support for GPIO connected LEDs (LEDS_GPIO) [Y/n/m/?] y
+  LED Support for N.S. LP3944 (Fun Light) I2C chip (LEDS_LP3944) [N/m/y/?] n
+  LED Support for TI LP3952 2 channel LED driver (LEDS_LP3952) [N/m/y/?] n
+  LED Support for N.S. LP5521 LED driver chip (LEDS_LP5521) [N/m/y/?] n
+  LED Support for TI/National LP5523/55231 LED driver chip (LEDS_LP5523) [N/m/y/?] n
+  LED Support for TI LP5562 LED driver chip (LEDS_LP5562) [N/m/y/?] n
+  LED Support for TI LP8501 LED driver chip (LEDS_LP8501) [N/m/y/?] n
+  LED support for the TI LP8860 4 channel LED driver (LEDS_LP8860) [N/m/y/?] n
+  Mail LED on Clevo notebook (LEDS_CLEVO_MAIL) [N/m/?] (NEW) n
+  LED Support for PCA955x I2C chips (LEDS_PCA955X) [M/n/y/?] m
+    Enable GPIO support for PCA955X (LEDS_PCA955X_GPIO) [N/y/?] n
+  LED support for PCA963x I2C chip (LEDS_PCA963X) [M/n/y/?] m
+  LED Support for DAC124S085 SPI DAC (LEDS_DAC124S085) [N/m/y/?] n
+  PWM driven LED Support (LEDS_PWM) [N/m/y/?] n
+  REGULATOR driven LED support (LEDS_REGULATOR) [N/m/y/?] n
+  LED driver for BD2802 RGB LED (LEDS_BD2802) [N/m/y/?] n
+  LED driver for LT3593 controllers (LEDS_LT3593) [N/m/y/?] n
+  LED Support for TCA6507 I2C chip (LEDS_TCA6507) [N/m/y/?] n
+  LED driver for TLC59108 and TLC59116 controllers (LEDS_TLC591XX) [N/m/y/?] n
+  LED support for LM3554 and LM3556 chips (LEDS_LM355x) [N/m/y/?] n
+  LED Support for ISSI IS31FL319x I2C LED controller family (LEDS_IS31FL319X) [N/m/y/?] n
+  LED support for ISSI IS31FL32XX I2C LED controller family (LEDS_IS31FL32XX) [M/n/y/?] m
+  *
+  * LED driver for blink(1) USB RGB LED is under Special HID drivers (HID_THINGM)
+  *
+  LED support for the BlinkM I2C RGB LED (LEDS_BLINKM) [N/m/y/?] n
+  LED support for the Mellanox boards (LEDS_MLXCPLD) [N/m/y/?] (NEW) n
+  LED support for the Mellanox switches management control (LEDS_MLXREG) [N/m/y/?] n
+  Userspace LED support (LEDS_USER) [N/m/y/?] n
+  *
+  * LED Triggers
+  *
+*
+* X86 Platform Specific Device Drivers
+*
+X86 Platform Specific Device Drivers (X86_PLATFORM_DEVICES) [Y/n/?] (NEW) y
+  Dell SMBIOS driver (DELL_SMBIOS) [N/m/y/?] (NEW) n
+  Thinkpad Hard Drive Active Protection System (hdaps) (SENSORS_HDAPS) [N/m/y/?] (NEW) n
+  Samsung Laptop driver (SAMSUNG_LAPTOP) [N/m/y/?] (NEW) n
+  Intel P-Unit IPC Driver (INTEL_PUNIT_IPC) [N/m/y/?] (NEW) n
+  Mellanox Technologies platform support (MLX_PLATFORM) [N/m/y/?] (NEW) n
+*
+* NVDIMM (Non-Volatile Memory Device) Support
+*
+NVDIMM (Non-Volatile Memory Device) Support (LIBNVDIMM) [N/m/y/?] (NEW) n
+*
+* File systems
+*
+Second extended fs support (EXT2_FS) [N/m/y/?] n
+The Extended 3 (ext3) filesystem (EXT3_FS) [N/m/y/?] n
+The Extended 4 (ext4) filesystem (EXT4_FS) [Y/n/m/?] y
+  Use ext4 for ext2 file systems (EXT4_USE_FOR_EXT2) [Y/n/?] y
+  Ext4 POSIX Access Control Lists (EXT4_FS_POSIX_ACL) [Y/n/?] y
+  Ext4 Security Labels (EXT4_FS_SECURITY) [Y/n/?] y
+  Ext4 Encryption (EXT4_ENCRYPTION) [N/y/?] n
+  EXT4 debugging support (EXT4_DEBUG) [N/y/?] n
+JBD2 (ext4) debugging support (JBD2_DEBUG) [N/y/?] n
+Reiserfs support (REISERFS_FS) [N/m/y/?] n
+JFS filesystem support (JFS_FS) [M/n/y/?] m
+  JFS POSIX Access Control Lists (JFS_POSIX_ACL) [Y/n/?] y
+  JFS Security Labels (JFS_SECURITY) [Y/n/?] y
+  JFS debugging (JFS_DEBUG) [N/y/?] n
+  JFS statistics (JFS_STATISTICS) [Y/n/?] y
+XFS filesystem support (XFS_FS) [M/n/y/?] m
+  XFS Quota support (XFS_QUOTA) [Y/n/?] y
+  XFS POSIX ACL support (XFS_POSIX_ACL) [Y/n/?] y
+  XFS Realtime subvolume support (XFS_RT) [Y/n/?] y
+  XFS online metadata check support (XFS_ONLINE_SCRUB) [N/y/?] n
+  XFS Verbose Warnings (XFS_WARN) [N/y/?] n
+  XFS Debugging support (XFS_DEBUG) [N/y/?] n
+GFS2 file system support (GFS2_FS) [M/n/y/?] m
+  GFS2 DLM locking (GFS2_FS_LOCKING_DLM) [N/y/?] n
+OCFS2 file system support (OCFS2_FS) [M/n/y/?] m
+  O2CB Kernelspace Clustering (OCFS2_FS_O2CB) [M/n/?] m
+  OCFS2 Userspace Clustering (OCFS2_FS_USERSPACE_CLUSTER) [M/n/?] m
+  OCFS2 statistics (OCFS2_FS_STATS) [Y/n/?] y
+  OCFS2 logging support (OCFS2_DEBUG_MASKLOG) [Y/n/?] y
+  OCFS2 expensive checks (OCFS2_DEBUG_FS) [N/y/?] n
+Btrfs filesystem support (BTRFS_FS) [M/n/y/?] m
+  Btrfs POSIX Access Control Lists (BTRFS_FS_POSIX_ACL) [Y/n/?] y
+  Btrfs with integrity check tool compiled in (DANGEROUS) (BTRFS_FS_CHECK_INTEGRITY) [N/y/?] n
+  Btrfs will run sanity tests upon loading (BTRFS_FS_RUN_SANITY_TESTS) [N/y/?] n
+  Btrfs debugging support (BTRFS_DEBUG) [N/y/?] n
+  Btrfs assert support (BTRFS_ASSERT) [N/y/?] n
+  Btrfs with the ref verify tool compiled in (BTRFS_FS_REF_VERIFY) [N/y/?] n
+NILFS2 file system support (NILFS2_FS) [M/n/y/?] m
+F2FS filesystem support (F2FS_FS) [Y/n/m/?] y
+  F2FS Status Information (F2FS_STAT_FS) [Y/n/?] y
+  F2FS extended attributes (F2FS_FS_XATTR) [Y/n/?] y
+    F2FS Access Control Lists (F2FS_FS_POSIX_ACL) [Y/n/?] y
+    F2FS Security Labels (F2FS_FS_SECURITY) [N/y/?] n
+  F2FS consistency checking feature (F2FS_CHECK_FS) [N/y/?] n
+  F2FS Encryption (F2FS_FS_ENCRYPTION) [N/y/?] n
+  F2FS IO tracer (F2FS_IO_TRACE) [N/y/?] n
+  F2FS fault injection facility (F2FS_FAULT_INJECTION) [N/y/?] n
+Direct Access (DAX) support (FS_DAX) [N/y/?] (NEW) n
+Enable filesystem export operations for block IO (EXPORTFS_BLOCK_OPS) [N/y/?] n
+Enable POSIX file locking API (FILE_LOCKING) [Y/n/?] y
+  Enable Mandatory file locking (MANDATORY_FILE_LOCKING) [Y/n/?] y
+FS Encryption (Per-file encryption) (FS_ENCRYPTION) [N/m/y/?] n
+Dnotify support (DNOTIFY) [Y/n/?] y
+Inotify support for userspace (INOTIFY_USER) [Y/n/?] y
+Filesystem wide access notification (FANOTIFY) [Y/n/?] y
+Quota support (QUOTA) [Y/?] y
+Report quota messages through netlink interface (QUOTA_NETLINK_INTERFACE) [N/y/?] n
+Print quota warnings to console (OBSOLETE) (PRINT_QUOTA_WARNING) [Y/n/?] y
+Additional quota sanity checks (QUOTA_DEBUG) [N/y/?] n
+Old quota format support (QFMT_V1) [M/n/y/?] m
+Quota format vfsv0 and vfsv1 support (QFMT_V2) [M/n/y/?] m
+Old Kconfig name for Kernel automounter support (AUTOFS4_FS) [Y/n/m/?] y
+Kernel automounter support (supports v3, v4 and v5) (AUTOFS_FS) [Y/?] y
+FUSE (Filesystem in Userspace) support (FUSE_FS) [M/n/y/?] m
+  Character device in Userspace support (CUSE) [M/n/?] m
+Overlay filesystem support (OVERLAY_FS) [M/n/y/?] m
+  Overlayfs: turn on redirect directory feature by default (OVERLAY_FS_REDIRECT_DIR) [N/y/?] n
+  Overlayfs: follow redirects even if redirects are turned off (OVERLAY_FS_REDIRECT_ALWAYS_FOLLOW) [Y/n/?] y
+  Overlayfs: turn on inodes index feature by default (OVERLAY_FS_INDEX) [N/y/?] n
+  Overlayfs: auto enable inode number mapping (OVERLAY_FS_XINO_AUTO) [N/y/?] n
+  Overlayfs: turn on metadata only copy up feature by default (OVERLAY_FS_METACOPY) [N/y/?] n
+*
+* Pseudo filesystems
+*
+/proc file system support (PROC_FS) [Y/n/?] y
+  /proc/kcore support (PROC_KCORE) [N/y/?] (NEW) n
+  Sysctl support (/proc/sys) (PROC_SYSCTL) [Y/n/?] y
+  Enable /proc page monitoring (PROC_PAGE_MONITOR) [Y/n/?] y
+Include /proc/<pid>/task/<tid>/children file (PROC_CHILDREN) [N/y/?] n
+sysfs file system support (SYSFS) [Y/?] y
+Tmpfs virtual memory file system support (former shm fs) (TMPFS) [Y/n/?] y
+  Tmpfs POSIX Access Control Lists (TMPFS_POSIX_ACL) [Y/n/?] y
+  Tmpfs extended attributes (TMPFS_XATTR) [Y/?] y
+HugeTLB file system support (HUGETLBFS) [N/y/?] (NEW) n
+Userspace-driven configuration filesystem (CONFIGFS_FS) [Y/?] y
+*
+* Security options
+*
+Enable access key retention support (KEYS) [Y/?] y
+  Enable register of persistent per-UID keyrings (PERSISTENT_KEYRINGS) [N/y/?] n
+  Large payload keys (BIG_KEYS) [N/y/?] n
+  TRUSTED KEYS (TRUSTED_KEYS) [N/m/?] n
+  ENCRYPTED KEYS (ENCRYPTED_KEYS) [N/m/y/?] n
+  Diffie-Hellman operations on retained keys (KEY_DH_OPERATIONS) [N/y/?] n
+Restrict unprivileged access to the kernel syslog (SECURITY_DMESG_RESTRICT) [N/y/?] n
+Enable different security models (SECURITY) [N/y/?] n
+Enable the securityfs filesystem (SECURITYFS) [N/y/?] n
+Remove the kernel mapping in user mode (PAGE_TABLE_ISOLATION) [Y/n/?] (NEW) y
+Harden memory copies between kernel and userspace (HARDENED_USERCOPY) [N/y/?] n
+Harden common str/mem functions against buffer overflows (FORTIFY_SOURCE) [N/y/?] n
+Force all usermode helper calls through a single binary (STATIC_USERMODEHELPER) [N/y/?] n
+Default security module
+> 1. Unix Discretionary Access Controls (DEFAULT_SECURITY_DAC)
+choice[1]: 1
+*
+* Cryptographic API
+*
+Cryptographic API (CRYPTO) [Y/?] y
+  *
+  * Crypto core or helper
+  *
+  RSA algorithm (CRYPTO_RSA) [Y/?] y
+  Diffie-Hellman algorithm (CRYPTO_DH) [N/m/y/?] n
+  ECDH algorithm (CRYPTO_ECDH) [M/n/y/?] m
+  Cryptographic algorithm manager (CRYPTO_MANAGER) [Y/?] y
+  Userspace cryptographic algorithm configuration (CRYPTO_USER) [M/n/y/?] m
+  Disable run-time self tests (CRYPTO_MANAGER_DISABLE_TESTS) [Y/n/?] y
+  GF(2^128) multiplication functions (CRYPTO_GF128MUL) [M/y/?] m
+  Null algorithms (CRYPTO_NULL) [M/y/?] m
+  Software async crypto daemon (CRYPTO_CRYPTD) [M/n/y/?] m
+  Software async multi-buffer crypto daemon (CRYPTO_MCRYPTD) [N/m/y/?] n
+  Authenc support (CRYPTO_AUTHENC) [M/y/?] m
+  Testing module (CRYPTO_TEST) [N/m/?] n
+  *
+  * Authenticated Encryption with Associated Data
+  *
+  CCM support (CRYPTO_CCM) [M/y/?] m
+  GCM/GMAC support (CRYPTO_GCM) [M/y/?] m
+  ChaCha20-Poly1305 AEAD support (CRYPTO_CHACHA20POLY1305) [N/m/y/?] n
+  AEGIS-128 AEAD algorithm (CRYPTO_AEGIS128) [N/m/y/?] n
+  AEGIS-128L AEAD algorithm (CRYPTO_AEGIS128L) [N/m/y/?] n
+  AEGIS-256 AEAD algorithm (CRYPTO_AEGIS256) [N/m/y/?] n
+  AEGIS-128 AEAD algorithm (x86_64 AESNI+SSE2 implementation) (CRYPTO_AEGIS128_AESNI_SSE2) [N/m/y/?] (NEW) n
+  AEGIS-128L AEAD algorithm (x86_64 AESNI+SSE2 implementation) (CRYPTO_AEGIS128L_AESNI_SSE2) [N/m/y/?] (NEW) n
+  AEGIS-256 AEAD algorithm (x86_64 AESNI+SSE2 implementation) (CRYPTO_AEGIS256_AESNI_SSE2) [N/m/y/?] (NEW) n
+  MORUS-640 AEAD algorithm (CRYPTO_MORUS640) [N/m/y/?] n
+  MORUS-640 AEAD algorithm (x86_64 SSE2 implementation) (CRYPTO_MORUS640_SSE2) [N/m/y/?] (NEW) n
+  MORUS-1280 AEAD algorithm (CRYPTO_MORUS1280) [N/m/y/?] n
+  MORUS-1280 AEAD algorithm (x86_64 SSE2 implementation) (CRYPTO_MORUS1280_SSE2) [N/m/y/?] (NEW) n
+  MORUS-1280 AEAD algorithm (x86_64 AVX2 implementation) (CRYPTO_MORUS1280_AVX2) [N/m/y/?] (NEW) n
+  Sequence Number IV Generator (CRYPTO_SEQIV) [M/y/?] m
+  Encrypted Chain IV Generator (CRYPTO_ECHAINIV) [M/y/?] m
+  *
+  * Block modes
+  *
+  CBC support (CRYPTO_CBC) [Y/m/?] y
+  CFB support (CRYPTO_CFB) [N/m/y/?] n
+  CTR support (CRYPTO_CTR) [M/y/?] m
+  CTS support (CRYPTO_CTS) [M/n/y/?] m
+  ECB support (CRYPTO_ECB) [M/y/?] m
+  LRW support (CRYPTO_LRW) [N/m/y/?] n
+  PCBC support (CRYPTO_PCBC) [N/m/y/?] n
+  XTS support (CRYPTO_XTS) [M/n/y/?] m
+  Key wrapping support (CRYPTO_KEYWRAP) [N/m/y/?] n
+  *
+  * Hash modes
+  *
+  CMAC support (CRYPTO_CMAC) [M/y/?] m
+  HMAC support (CRYPTO_HMAC) [M/y/?] m
+  XCBC support (CRYPTO_XCBC) [M/n/y/?] m
+  VMAC support (CRYPTO_VMAC) [N/m/y/?] n
+  *
+  * Digest
+  *
+  CRC32c CRC algorithm (CRYPTO_CRC32C) [Y/?] y
+  CRC32c INTEL hardware acceleration (CRYPTO_CRC32C_INTEL) [N/m/y/?] (NEW) n
+  CRC32 CRC algorithm (CRYPTO_CRC32) [Y/?] y
+  CRC32 PCLMULQDQ hardware acceleration (CRYPTO_CRC32_PCLMUL) [N/m/y/?] (NEW) n
+  CRCT10DIF algorithm (CRYPTO_CRCT10DIF) [N/m/y/?] n
+  GHASH digest algorithm (CRYPTO_GHASH) [M/y/?] m
+  Poly1305 authenticator algorithm (CRYPTO_POLY1305) [N/m/y/?] n
+  Poly1305 authenticator algorithm (x86_64/SSE2/AVX2) (CRYPTO_POLY1305_X86_64) [N/m/y/?] (NEW) n
+  MD4 digest algorithm (CRYPTO_MD4) [M/y/?] m
+  MD5 digest algorithm (CRYPTO_MD5) [M/y/?] m
+  Michael MIC keyed digest algorithm (CRYPTO_MICHAEL_MIC) [M/y/?] m
+  RIPEMD-128 digest algorithm (CRYPTO_RMD128) [N/m/y/?] n
+  RIPEMD-160 digest algorithm (CRYPTO_RMD160) [N/m/y/?] n
+  RIPEMD-256 digest algorithm (CRYPTO_RMD256) [N/m/y/?] n
+  RIPEMD-320 digest algorithm (CRYPTO_RMD320) [N/m/y/?] n
+  SHA1 digest algorithm (CRYPTO_SHA1) [M/y/?] m
+  SHA1 digest algorithm (SSSE3/AVX/AVX2/SHA-NI) (CRYPTO_SHA1_SSSE3) [N/m/y/?] (NEW) n
+  SHA256 digest algorithm (SSSE3/AVX/AVX2/SHA-NI) (CRYPTO_SHA256_SSSE3) [N/m/y/?] (NEW) n
+  SHA512 digest algorithm (SSSE3/AVX/AVX2) (CRYPTO_SHA512_SSSE3) [N/m/y/?] (NEW) n
+  SHA1 digest algorithm (x86_64 Multi-Buffer, Experimental) (CRYPTO_SHA1_MB) [N/m/y/?] (NEW) n
+  SHA256 digest algorithm (x86_64 Multi-Buffer, Experimental) (CRYPTO_SHA256_MB) [N/m/y/?] (NEW) n
+  SHA512 digest algorithm (x86_64 Multi-Buffer, Experimental) (CRYPTO_SHA512_MB) [N/m/y/?] (NEW) n
+  SHA224 and SHA256 digest algorithm (CRYPTO_SHA256) [M/y/?] m
+  SHA384 and SHA512 digest algorithms (CRYPTO_SHA512) [M/y/?] m
+  SHA3 digest algorithm (CRYPTO_SHA3) [N/m/y/?] n
+  SM3 digest algorithm (CRYPTO_SM3) [N/m/y/?] n
+  Tiger digest algorithms (CRYPTO_TGR192) [M/n/y/?] m
+  Whirlpool digest algorithms (CRYPTO_WP512) [M/n/y/?] m
+  GHASH digest algorithm (CLMUL-NI accelerated) (CRYPTO_GHASH_CLMUL_NI_INTEL) [N/m/y/?] (NEW) n
+  *
+  * Ciphers
+  *
+  AES cipher algorithms (CRYPTO_AES) [Y/?] y
+  Fixed time AES cipher (CRYPTO_AES_TI) [N/m/y/?] n
+  AES cipher algorithms (x86_64) (CRYPTO_AES_X86_64) [N/m/y/?] (NEW) n
+  AES cipher algorithms (AES-NI) (CRYPTO_AES_NI_INTEL) [N/m/y/?] (NEW) n
+  Anubis cipher algorithm (CRYPTO_ANUBIS) [N/m/y/?] n
+  ARC4 cipher algorithm (CRYPTO_ARC4) [M/y/?] m
+  Blowfish cipher algorithm (CRYPTO_BLOWFISH) [N/m/y/?] n
+  Blowfish cipher algorithm (x86_64) (CRYPTO_BLOWFISH_X86_64) [N/m/y/?] (NEW) n
+  Camellia cipher algorithms (CRYPTO_CAMELLIA) [N/m/y/?] n
+  Camellia cipher algorithm (x86_64) (CRYPTO_CAMELLIA_X86_64) [N/m/y/?] (NEW) n
+  Camellia cipher algorithm (x86_64/AES-NI/AVX) (CRYPTO_CAMELLIA_AESNI_AVX_X86_64) [N/m/y/?] (NEW) n
+  Camellia cipher algorithm (x86_64/AES-NI/AVX2) (CRYPTO_CAMELLIA_AESNI_AVX2_X86_64) [N/m/y/?] (NEW) n
+  CAST5 (CAST-128) cipher algorithm (CRYPTO_CAST5) [M/n/y/?] m
+  CAST5 (CAST-128) cipher algorithm (x86_64/AVX) (CRYPTO_CAST5_AVX_X86_64) [N/m/y/?] (NEW) n
+  CAST6 (CAST-256) cipher algorithm (CRYPTO_CAST6) [N/m/y/?] n
+  CAST6 (CAST-256) cipher algorithm (x86_64/AVX) (CRYPTO_CAST6_AVX_X86_64) [N/m/y/?] (NEW) n
+  DES and Triple DES EDE cipher algorithms (CRYPTO_DES) [Y/m/?] y
+  Triple DES EDE cipher algorithm (x86-64) (CRYPTO_DES3_EDE_X86_64) [N/m/y/?] (NEW) n
+  FCrypt cipher algorithm (CRYPTO_FCRYPT) [N/m/y/?] n
+  Khazad cipher algorithm (CRYPTO_KHAZAD) [N/m/y/?] n
+  Salsa20 stream cipher algorithm (CRYPTO_SALSA20) [N/m/y/?] n
+  ChaCha20 cipher algorithm (CRYPTO_CHACHA20) [N/m/y/?] n
+  ChaCha20 cipher algorithm (x86_64/SSSE3/AVX2) (CRYPTO_CHACHA20_X86_64) [N/m/y/?] (NEW) n
+  SEED cipher algorithm (CRYPTO_SEED) [N/m/y/?] n
+  Serpent cipher algorithm (CRYPTO_SERPENT) [N/m/y/?] n
+  Serpent cipher algorithm (x86_64/SSE2) (CRYPTO_SERPENT_SSE2_X86_64) [N/m/y/?] (NEW) n
+  Serpent cipher algorithm (x86_64/AVX) (CRYPTO_SERPENT_AVX_X86_64) [N/m/y/?] (NEW) n
+  Serpent cipher algorithm (x86_64/AVX2) (CRYPTO_SERPENT_AVX2_X86_64) [N/m/y/?] (NEW) n
+  SM4 cipher algorithm (CRYPTO_SM4) [N/m/y/?] n
+  TEA, XTEA and XETA cipher algorithms (CRYPTO_TEA) [N/m/y/?] n
+  Twofish cipher algorithm (CRYPTO_TWOFISH) [N/m/y/?] n
+  Twofish cipher algorithm (x86_64) (CRYPTO_TWOFISH_X86_64) [N/m/y/?] (NEW) n
+  Twofish cipher algorithm (x86_64, 3-way parallel) (CRYPTO_TWOFISH_X86_64_3WAY) [N/m/y/?] (NEW) n
+  Twofish cipher algorithm (x86_64/AVX) (CRYPTO_TWOFISH_AVX_X86_64) [N/m/y/?] (NEW) n
+  *
+  * Compression
+  *
+  Deflate compression algorithm (CRYPTO_DEFLATE) [M/y/?] m
+  LZO compression algorithm (CRYPTO_LZO) [M/y/?] m
+  842 compression algorithm (CRYPTO_842) [N/m/y/?] n
+  LZ4 compression algorithm (CRYPTO_LZ4) [M/n/y/?] m
+  LZ4HC compression algorithm (CRYPTO_LZ4HC) [N/m/y/?] n
+  Zstd compression algorithm (CRYPTO_ZSTD) [N/m/y/?] n
+  *
+  * Random Number Generation
+  *
+  Pseudo Random Number Generation for Cryptographic modules (CRYPTO_ANSI_CPRNG) [N/m/y/?] n
+  Jitterentropy Non-Deterministic Random Number Generator (CRYPTO_JITTERENTROPY) [M/y/?] m
+  User-space interface for hash algorithms (CRYPTO_USER_API_HASH) [N/m/y/?] n
+  User-space interface for symmetric key cipher algorithms (CRYPTO_USER_API_SKCIPHER) [M/n/y/?] m
+  User-space interface for random number generator algorithms (CRYPTO_USER_API_RNG) [N/m/y/?] n
+  User-space interface for AEAD cipher algorithms (CRYPTO_USER_API_AEAD) [N/m/y/?] n
+*
+* Memory Debugging
+*
+Extend memmap on extra space for more information on page (PAGE_EXTENSION) [N/y/?] n
+Debug page memory allocations (DEBUG_PAGEALLOC) [N/y/?] n
+Poison pages after freeing (PAGE_POISONING) [N/y/?] n
+Enable tracepoint to track down page reference manipulation (DEBUG_PAGE_REF) [N/y/?] n
+Testcase for the marking rodata read-only (DEBUG_RODATA_TEST) [N/y/?] n
+Debug object operations (DEBUG_OBJECTS) [N/y/?] n
+SLUB debugging on by default (SLUB_DEBUG_ON) [N/y/?] n
+Enable SLUB performance statistics (SLUB_STATS) [N/y/?] n
+Kernel memory leak detector (DEBUG_KMEMLEAK) [N/y/?] n
+Stack utilization instrumentation (DEBUG_STACK_USAGE) [N/y/?] n
+Debug VM (DEBUG_VM) [N/y/?] n
+Debug VM translations (DEBUG_VIRTUAL) [N/y/?] n
+Debug memory initialisation (DEBUG_MEMORY_INIT) [Y/n/?] y
+Check for stack overflows (DEBUG_STACKOVERFLOW) [N/y/?] (NEW) n
+KASan: runtime memory debugger (KASAN) [N/y/?] (NEW) n
+*
+* Kernel hacking
+*
+Magic SysRq key (MAGIC_SYSRQ) [Y/?] y
+  Enable magic SysRq key functions by default (MAGIC_SYSRQ_DEFAULT_ENABLE) [0x1] 0x1
+  Enable magic SysRq key over serial (MAGIC_SYSRQ_SERIAL) [Y/n/?] y
+Kernel debugging (DEBUG_KERNEL) [Y/?] y
+Code coverage for fuzzing (KCOV) [N/y/?] (NEW) n
+Debug shared IRQ handlers (DEBUG_SHIRQ) [N/y/?] n
+*
+* Debug Lockups and Hangs
+*
+Detect Soft Lockups (SOFTLOCKUP_DETECTOR) [N/y/?] n
+Detect Hard Lockups (HARDLOCKUP_DETECTOR) [N/y/?] (NEW) n
+Detect Hung Tasks (DETECT_HUNG_TASK) [Y/n/?] y
+  Default timeout for hung task detection (in seconds) (DEFAULT_HUNG_TASK_TIMEOUT) [120] 120
+  Panic (Reboot) On Hung Tasks (BOOTPARAM_HUNG_TASK_PANIC) [N/y/?] n
+Detect Workqueue Stalls (WQ_WATCHDOG) [N/y/?] n
+Panic on Oops (PANIC_ON_OOPS) [N/y/?] n
+panic timeout (PANIC_TIMEOUT) [0] 0
+Collect scheduler debugging info (SCHED_DEBUG) [Y/?] y
+Collect scheduler statistics (SCHEDSTATS) [Y/?] y
+Detect stack corruption on calls to schedule() (SCHED_STACK_END_CHECK) [N/y/?] n
+Enable extra timekeeping sanity checking (DEBUG_TIMEKEEPING) [N/y/?] n
+Stack backtrace support (STACKTRACE) [Y/?] y
+Warn for all uses of unseeded randomness (WARN_ALL_UNSEEDED_RANDOM) [N/y/?] n
+kobject debugging (DEBUG_KOBJECT) [N/y/?] n
+Verbose BUG() reporting (adds 70K) (DEBUG_BUGVERBOSE) [Y/n/?] y
+Debug linked list manipulation (DEBUG_LIST) [N/y/?] n
+Debug priority linked list manipulation (DEBUG_PI_LIST) [N/y/?] n
+Debug SG table operations (DEBUG_SG) [N/y/?] n
+Debug notifier call chains (DEBUG_NOTIFIERS) [N/y/?] n
+Debug credential management (DEBUG_CREDENTIALS) [N/y/?] n
+Force round-robin CPU selection for unbound work items (DEBUG_WQ_FORCE_RR_CPU) [N/y/?] n
+Force extended block device numbers and spread them (DEBUG_BLOCK_EXT_DEVT) [N/y/?] n
+Notifier error injection (NOTIFIER_ERROR_INJECTION) [N/m/y/?] n
+Fault-injection framework (FAULT_INJECTION) [N/y/?] n
+Latency measuring infrastructure (LATENCYTOP) [Y/n/?] y
+*
+* Tracers
+*
+Tracers (FTRACE) [Y/n/?] y
+  Kernel Function Tracer (FUNCTION_TRACER) [Y/?] y
+    Kernel Function Graph Tracer (FUNCTION_GRAPH_TRACER) [Y/n/?] y
+  Enable trace events for preempt and irq disable/enable (PREEMPTIRQ_EVENTS) [N/y/?] n
+  Interrupts-off Latency Tracer (IRQSOFF_TRACER) [Y/n/?] y
+  Scheduling Latency Tracer (SCHED_TRACER) [Y/n/?] y
+  Tracer to detect hardware latencies (like SMIs) (HWLAT_TRACER) [N/y/?] n
+  Trace syscalls (FTRACE_SYSCALLS) [N/y/?] n
+  Create a snapshot trace buffer (TRACER_SNAPSHOT) [Y/?] y
+    Allow snapshot to swap per CPU (TRACER_SNAPSHOT_PER_CPU_SWAP) [Y/?] y
+  Branch Profiling
+  > 1. No branch profiling (BRANCH_PROFILE_NONE)
+    2. Trace likely/unlikely profiler (PROFILE_ANNOTATED_BRANCHES)
+    3. Profile all if conditionals (PROFILE_ALL_BRANCHES)
+  choice[1-3?]: 1
+  Trace max stack (STACK_TRACER) [Y/n/?] y
+  Support for tracing block IO actions (BLK_DEV_IO_TRACE) [Y/n/?] y
+  Enable kprobes-based dynamic events (KPROBE_EVENTS) [Y/n/?] y
+    Do NOT protect notrace function from kprobe events (KPROBE_EVENTS_ON_NOTRACE) [N/y/?] (NEW) n
+  Enable uprobes-based dynamic events (UPROBE_EVENTS) [N/y/?] n
+  enable/disable function tracing dynamically (DYNAMIC_FTRACE) [Y/n/?] y
+  Kernel function profiler (FUNCTION_PROFILER) [Y/n/?] y
+  Enable BPF programs to override a kprobed function (BPF_KPROBE_OVERRIDE) [N/y/?] (NEW) n
+  Perform a startup test on ftrace (FTRACE_STARTUP_TEST) [N/y/?] n
+  Histogram triggers (HIST_TRIGGERS) [N/y/?] (NEW) n
+  Add tracepoint that benchmarks tracepoints (TRACEPOINT_BENCHMARK) [N/y/?] n
+  Ring buffer benchmark stress tester (RING_BUFFER_BENCHMARK) [N/m/y/?] n
+  Ring buffer startup self test (RING_BUFFER_STARTUP_TEST) [N/y/?] n
+  Preempt / IRQ disable delay thread to test latency tracers (PREEMPTIRQ_DELAY_TEST) [N/m/?] n
+  Show eval mappings for trace events (TRACE_EVAL_MAP_FILE) [N/y/?] n
+  Trace gpio events (TRACING_EVENTS_GPIO) [Y/n/?] y
+Enable debugging of DMA-API usage (DMA_API_DEBUG) [N/y/?] n
+Memtest (MEMTEST) [N/y/?] n
+Trigger a BUG when data corruption is detected (BUG_ON_DATA_CORRUPTION) [N/y/?] n
+*
+* KGDB: kernel debugger
+*
+KGDB: kernel debugger (KGDB) [Y/n/?] y
+  KGDB: use kgdb over the serial console (KGDB_SERIAL_CONSOLE) [Y/n/m/?] y
+  KGDB: internal test suite (KGDB_TESTS) [N/y/?] n
+  KGDB: Allow debugging with traps in notifiers (KGDB_LOW_LEVEL_TRAP) [N/y/?] (NEW) n
+  KGDB_KDB: include kdb frontend for kgdb (KGDB_KDB) [Y/n/?] y
+    KDB: Select kdb command functions to be enabled by default (KDB_DEFAULT_ENABLE) [0x1] 0x1
+    KGDB_KDB: keyboard as input device (KDB_KEYBOARD) [Y/n/?] y
+    KDB: continue after catastrophic errors (KDB_CONTINUE_CATASTROPHIC) [0] 0
+Undefined behaviour sanity checker (UBSAN) [N/y/?] n
+Filter access to /dev/mem (STRICT_DEVMEM) [N/y/?] n
+Enable verbose x86 bootup info messages (X86_VERBOSE_BOOTUP) [Y/n/?] (NEW) y
+Early printk (EARLY_PRINTK) [Y/n/?] (NEW) y
+Export kernel pagetable layout to userspace via debugfs (X86_PTDUMP) [N/m/y/?] (NEW) n
+Warn on W+X mappings at boot (DEBUG_WX) [N/y/?] n
+Enable doublefault exception handler (DOUBLEFAULT) [Y/n/?] (NEW) y
+Set upper limit of TLB entries to flush one-by-one (DEBUG_TLBFLUSH) [N/y/?] (NEW) n
+x86 instruction decoder selftest (X86_DECODER_SELFTEST) [N/y/?] (NEW) n
+IO delay type
+> 1. port 0x80 based port-IO delay [recommended] (IO_DELAY_0X80) (NEW)
+  2. port 0xed based port-IO delay (IO_DELAY_0XED) (NEW)
+  3. udelay based port-IO delay (IO_DELAY_UDELAY) (NEW)
+  4. no port-IO delay (IO_DELAY_NONE) (NEW)
+choice[1-4?]: 1
+Debug boot parameters (DEBUG_BOOT_PARAMS) [N/y/?] (NEW) n
+CPA self-test code (CPA_DEBUG) [N/y/?] (NEW) n
+Allow gcc to uninline functions marked 'inline' (OPTIMIZE_INLINING) [N/y/?] (NEW) n
+Debug low-level entry code (DEBUG_ENTRY) [N/y/?] (NEW) n
+NMI Selftest (DEBUG_NMI_SELFTEST) [N/y/?] (NEW) n
+Debug the x86 FPU code (X86_DEBUG_FPU) [Y/n/?] (NEW) y
+Choose kernel unwinder
+> 1. ORC unwinder (UNWINDER_ORC) (NEW)
+  2. Frame pointer unwinder (UNWINDER_FRAME_POINTER) (NEW)
+  3. Guess unwinder (UNWINDER_GUESS) (NEW)
+choice[1-3?]: 1
+  SYSTBL  arch/x86/include/generated/asm/syscalls_32.h
+  SYSHDR  arch/x86/include/generated/asm/unistd_32_ia32.h
+  SYSHDR  arch/x86/include/generated/asm/unistd_64_x32.h
+  SYSTBL  arch/x86/include/generated/asm/syscalls_64.h
+  SYSHDR  arch/x86/include/generated/uapi/asm/unistd_32.h
+  SYSHDR  arch/x86/include/generated/uapi/asm/unistd_64.h
+  SYSHDR  arch/x86/include/generated/uapi/asm/unistd_x32.h
+  HOSTCC  arch/x86/tools/relocs_32.o
+  HOSTCC  arch/x86/tools/relocs_64.o
+  HOSTCC  arch/x86/tools/relocs_common.o
+  HOSTLD  arch/x86/tools/relocs
+  WRAP    arch/x86/include/generated/uapi/asm/bpf_perf_event.h
+  WRAP    arch/x86/include/generated/uapi/asm/poll.h
+  WRAP    arch/x86/include/generated/asm/dma-contiguous.h
+  WRAP    arch/x86/include/generated/asm/early_ioremap.h
+  WRAP    arch/x86/include/generated/asm/export.h
+  WRAP    arch/x86/include/generated/asm/mcs_spinlock.h
+  WRAP    arch/x86/include/generated/asm/mm-arch-hooks.h
+  CC      kernel/bounds.s
+  UPD     include/generated/bounds.h
+  CC      arch/x86/kernel/asm-offsets.s
+  UPD     include/generated/asm-offsets.h
+  CALL    scripts/checksyscalls.sh
+error: Cannot generate ORC metadata for CONFIG_UNWINDER_ORC=y, please install libelf-dev, libelf-devel or elfutils-libelf-devel
+Makefile:1120: recipe for target 'prepare-objtool' failed
+make: *** [prepare-objtool] Error 1

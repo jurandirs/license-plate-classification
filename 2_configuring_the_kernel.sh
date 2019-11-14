@@ -14,7 +14,7 @@ sudo apt install libncurses5-dev
 
 # For all models of Raspberry Pi 1 (includes Compute Module and Pi Zero):
 KERNEL=kernel
-make bcmrpi_defconfig
+# make bcmrpi_defconfig
 
 # If you're cross-compiling, the second line should be:
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcmrpi_defconfig
@@ -29,7 +29,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcmrpi_defconfig
 # Using menuconfig
 # Once you've got everything set up and ready to go, you can compile and run the 
 # menuconfig utility as follows:
-# make menuconfig
+make menuconfig
 
 # If you're cross-compiling,:
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
