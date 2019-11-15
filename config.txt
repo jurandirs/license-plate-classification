@@ -1,4 +1,254 @@
-
+scripts/kconfig/conf  --syncconfig Kconfig
+*
+* Restart config...
+*
+*
+* General setup
+*
+Compile also drivers which will not load (COMPILE_TEST) [N/y/?] n
+Local version - append to kernel release (LOCALVERSION) [] 
+Automatically append version information to the version string (LOCALVERSION_AUTO) [N/y/?] n
+Build ID Salt (BUILD_SALT) [] 
+Kernel compression mode
+> 1. Gzip (KERNEL_GZIP)
+  2. Bzip2 (KERNEL_BZIP2) (NEW)
+  3. LZMA (KERNEL_LZMA)
+  4. XZ (KERNEL_XZ)
+  5. LZO (KERNEL_LZO)
+  6. LZ4 (KERNEL_LZ4)
+choice[1-6?]: 1
+Default hostname (DEFAULT_HOSTNAME) [(none)] (none)
+Support for paging of anonymous memory (swap) (SWAP) [Y/n/?] y
+System V IPC (SYSVIPC) [Y/n/?] y
+POSIX Message Queues (POSIX_MQUEUE) [Y/n/?] y
+Enable process_vm_readv/writev syscalls (CROSS_MEMORY_ATTACH) [Y/n/?] y
+uselib syscall (USELIB) [N/y/?] n
+Auditing support (AUDIT) [N/y/?] n
+Preemption Model
+  1. No Forced Preemption (Server) (PREEMPT_NONE)
+> 2. Voluntary Kernel Preemption (Desktop) (PREEMPT_VOLUNTARY)
+  3. Preemptible Kernel (Low-Latency Desktop) (PREEMPT)
+choice[1-3?]: 2
+Kernel .config support (IKCONFIG) [M/n/y/?] m
+  Enable access to .config through /proc/config.gz (IKCONFIG_PROC) [Y/n/?] y
+Kernel log buffer size (16 => 64KB, 17 => 128KB) (LOG_BUF_SHIFT) [17] 17
+Temporary per-CPU printk log buffer size (12 => 4KB, 13 => 8KB) (PRINTK_SAFE_LOG_BUF_SHIFT) [13] 13
+Checkpoint/restore support (CHECKPOINT_RESTORE) [N/y/?] n
+Automatic process group scheduling (SCHED_AUTOGROUP) [Y/n/?] y
+Enable deprecated sysfs features to support old userspace tools (SYSFS_DEPRECATED) [N/y/?] n
+Kernel->user space relay support (formerly relayfs) (RELAY) [Y/?] y
+Initial RAM filesystem and RAM disk (initramfs/initrd) support (BLK_DEV_INITRD) [Y/n/?] y
+  Initramfs source file(s) (INITRAMFS_SOURCE) [] 
+  Support initial ramdisk/ramfs compressed using gzip (RD_GZIP) [Y/n/?] y
+  Support initial ramdisk/ramfs compressed using bzip2 (RD_BZIP2) [Y/n/?] y
+  Support initial ramdisk/ramfs compressed using LZMA (RD_LZMA) [Y/n/?] y
+  Support initial ramdisk/ramfs compressed using XZ (RD_XZ) [Y/n/?] y
+  Support initial ramdisk/ramfs compressed using LZO (RD_LZO) [Y/n/?] y
+  Support initial ramdisk/ramfs compressed using LZ4 (RD_LZ4) [Y/n/?] y
+Compiler optimization level
+> 1. Optimize for performance (CC_OPTIMIZE_FOR_PERFORMANCE)
+  2. Optimize for size (CC_OPTIMIZE_FOR_SIZE)
+choice[1-2?]: 1
+*
+* Configure standard kernel features (expert users)
+*
+Configure standard kernel features (expert users) (EXPERT) [Y/?] y
+  Multiple users, groups and capabilities support (MULTIUSER) [Y/n/?] y
+  sgetmask/ssetmask syscalls support (SGETMASK_SYSCALL) [N/y/?] n
+  Sysfs syscall support (SYSFS_SYSCALL) [Y/n/?] y
+  Sysctl syscall support (SYSCTL_SYSCALL) [N/y/?] n
+  open by fhandle syscalls (FHANDLE) [Y/n/?] y
+  Posix Clocks & timers (POSIX_TIMERS) [Y/n/?] y
+  Enable support for printk (PRINTK) [Y/n/?] y
+  BUG() support (BUG) [Y/n/?] y
+  Enable ELF core dumps (ELF_CORE) [Y/n/?] y
+  Enable PC-Speaker support (PCSPKR_PLATFORM) [Y/n/?] (NEW) y
+  Enable full-sized data structures for core (BASE_FULL) [Y/n/?] y
+  Enable futex support (FUTEX) [Y/n/?] y
+  Enable eventpoll support (EPOLL) [Y/n/?] y
+  Enable signalfd() system call (SIGNALFD) [Y/n/?] y
+  Enable timerfd() system call (TIMERFD) [Y/n/?] y
+  Enable eventfd() system call (EVENTFD) [Y/?] y
+  Use full shmem filesystem (SHMEM) [Y/n/?] y
+  Enable AIO support (AIO) [Y/n/?] y
+  Enable madvise/fadvise syscalls (ADVISE_SYSCALLS) [Y/n/?] y
+  Enable membarrier() system call (MEMBARRIER) [Y/?] y
+  Load all symbols for debugging/ksymoops (KALLSYMS) [Y/?] y
+    Include all symbols in kallsyms (KALLSYMS_ALL) [Y/?] y
+Enable bpf() system call (BPF_SYSCALL) [Y/n/?] y
+Enable userfaultfd() system call (USERFAULTFD) [N/y/?] n
+Enable rseq() system call (RSEQ) [Y/n/?] y
+  Enabled debugging of rseq() system call (DEBUG_RSEQ) [N/y/?] n
+Embedded system (EMBEDDED) [Y/n/?] y
+PC/104 support (PC104) [N/y/?] n
+Enable VM event counters for /proc/vmstat (VM_EVENT_COUNTERS) [N/y/?] n
+Enable SLUB debugging support (SLUB_DEBUG) [Y/n/?] y
+Enable memcg SLUB sysfs support by default (SLUB_MEMCG_SYSFS_ON) [N/y/?] n
+Disable heap randomization (COMPAT_BRK) [N/y/?] n
+Choose SLAB allocator
+  1. SLAB (SLAB)
+> 2. SLUB (Unqueued Allocator) (SLUB)
+  3. SLOB (Simple Allocator) (SLOB)
+choice[1-3?]: 2
+Allow slab caches to be merged (SLAB_MERGE_DEFAULT) [Y/n/?] y
+SLAB freelist randomization (SLAB_FREELIST_RANDOM) [N/y/?] n
+Harden slab freelist metadata (SLAB_FREELIST_HARDENED) [N/y/?] n
+Profiling support (PROFILING) [Y/n/?] y
+*
+* Linux/x86 4.19.83 Kernel Configuration
+*
+*
+* Compiler: gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
+*
+64-bit kernel (64BIT) [Y/n/?] (NEW) y
+*
+* Processor type and features
+*
+DMA memory allocation support (ZONE_DMA) [Y/n/?] (NEW) y
+Symmetric multi-processing support (SMP) [N/y/?] (NEW) n
+Processor feature human-readable names (X86_FEATURE_NAMES) [Y/?] (NEW) y
+Avoid speculative indirect branches in kernel (RETPOLINE) [Y/n/?] (NEW) y
+Intel Resource Director Technology support (INTEL_RDT) [N/y/?] (NEW) n
+Support for extended (non-PC) x86 platforms (X86_EXTENDED_PLATFORM) [Y/n/?] (NEW) y
+Goldfish (Virtual Platform) (X86_GOLDFISH) [N/y/?] (NEW) n
+Single-depth WCHAN output (SCHED_OMIT_FRAME_POINTER) [Y/n/?] (NEW) y
+*
+* Linux guest support
+*
+Linux guest support (HYPERVISOR_GUEST) [N/y/?] (NEW) n
+Processor family
+  1. Opteron/Athlon64/Hammer/K8 (MK8) (NEW)
+  2. Intel P4 / older Netburst based Xeon (MPSC) (NEW)
+  3. Core 2/newer Xeon (MCORE2) (NEW)
+  4. Intel Atom (MATOM) (NEW)
+> 5. Generic-x86-64 (GENERIC_CPU) (NEW)
+choice[1-5?]: 5
+*
+* Supported processor vendors
+*
+Supported processor vendors (PROCESSOR_SELECT) [N/y/?] (NEW) n
+Enable DMI scanning (DMI) [Y/n/?] (NEW) y
+Reroute for broken boot IRQs (X86_REROUTE_FOR_BROKEN_BOOT_IRQS) [N/y/?] (NEW) n
+Machine Check / overheating reporting (X86_MCE) [Y/n/?] (NEW) y
+  Support for deprecated /dev/mcelog character device (X86_MCELOG_LEGACY) [N/y/?] (NEW) n
+  Intel MCE features (X86_MCE_INTEL) [Y/n/?] (NEW) y
+Machine check injector support (X86_MCE_INJECT) [N/m/y/?] (NEW) n
+*
+* Performance monitoring
+*
+AMD Processor Power Reporting Mechanism (PERF_EVENTS_AMD_POWER) [N/m/y/?] (NEW) n
+Enable support for 16-bit segments (X86_16BIT) [Y/n/?] (NEW) n
+Enable vsyscall emulation (X86_VSYSCALL_EMULATION) [Y/n/?] (NEW) y
+Dell i8k legacy laptop support (I8K) [N/m/y/?] (NEW) n
+CPU microcode loading support (MICROCODE) [Y/n/?] (NEW) y
+  Intel microcode loading support (MICROCODE_INTEL) [Y/n/?] (NEW) y
+  AMD microcode loading support (MICROCODE_AMD) [N/y/?] (NEW) n
+/dev/cpu/*/msr - Model-specific register support (X86_MSR) [N/m/y/?] (NEW) n
+/dev/cpu/*/cpuid - CPU information support (X86_CPUID) [N/m/y/?] (NEW) n
+Enable 5-level page tables support (X86_5LEVEL) [N/y/?] (NEW) n
+AMD Secure Memory Encryption (SME) support (AMD_MEM_ENCRYPT) [N/y/?] (NEW) n
+Support non-standard NVDIMMs and ADR protected memory (X86_PMEM_LEGACY) [N/m/y/?] (NEW) n
+Check for low memory corruption (X86_CHECK_BIOS_CORRUPTION) [N/y/?] (NEW) n
+Amount of low memory, in kilobytes, to reserve for the BIOS (X86_RESERVE_LOW) [64] (NEW) 64
+MTRR (Memory Type Range Register) support (MTRR) [Y/n/?] (NEW) y
+  MTRR cleanup support (MTRR_SANITIZER) [Y/n/?] (NEW) y
+    MTRR cleanup enable value (0-1) (MTRR_SANITIZER_ENABLE_DEFAULT) [0] (NEW) 0
+    MTRR cleanup spare reg num (0-7) (MTRR_SANITIZER_SPARE_REG_NR_DEFAULT) [1] (NEW) 1
+  x86 PAT support (X86_PAT) [Y/n/?] (NEW) y
+x86 architectural random number generator (ARCH_RANDOM) [Y/n/?] (NEW) y
+Supervisor Mode Access Prevention (X86_SMAP) [Y/n/?] (NEW) y
+Intel User Mode Instruction Prevention (X86_INTEL_UMIP) [Y/n/?] (NEW) y
+Intel MPX (Memory Protection Extensions) (X86_INTEL_MPX) [N/y/?] (NEW) n
+Intel Memory Protection Keys (X86_INTEL_MEMORY_PROTECTION_KEYS) [Y/n/?] (NEW) y
+Enable seccomp to safely compute untrusted bytecode (SECCOMP) [Y/n/?] y
+Timer frequency
+> 1. 100 HZ (HZ_100)
+  2. 250 HZ (HZ_250)
+  3. 300 HZ (HZ_300)
+  4. 1000 HZ (HZ_1000)
+choice[1-4?]: 1
+kexec system call (KEXEC) [N/y/?] n
+kernel crash dumps (CRASH_DUMP) [N/y/?] n
+Physical address where the kernel is loaded (PHYSICAL_START) [0x1000000] (NEW) 
+Build a relocatable kernel (RELOCATABLE) [Y/n/?] (NEW) y
+  Randomize the address of the kernel image (KASLR) (RANDOMIZE_BASE) [Y/n/?] (NEW) y
+Alignment value to which kernel should be aligned (PHYSICAL_ALIGN) [0x200000] (NEW) 
+Randomize the kernel memory sections (RANDOMIZE_MEMORY) [Y/n/?] (NEW) y
+  Physical memory mapping padding (RANDOMIZE_MEMORY_PHYSICAL_PADDING) [0x0] (NEW) 
+vsyscall table for legacy applications
+> 1. Emulate (LEGACY_VSYSCALL_EMULATE) (NEW)
+  2. None (LEGACY_VSYSCALL_NONE) (NEW)
+choice[1-2?]: 1
+Built-in kernel command line (CMDLINE_BOOL) [N/y/?] (NEW) n
+Enable the LDT (local descriptor table) (MODIFY_LDT_SYSCALL) [Y/n/?] (NEW) y
+Kernel Live Patching (LIVEPATCH) [N/y/?] (NEW) n
+*
+* SFI (Simple Firmware Interface) Support
+*
+SFI (Simple Firmware Interface) Support (SFI) [N/y/?] (NEW) n
+*
+* CPU Frequency scaling
+*
+CPU Frequency scaling (CPU_FREQ) [Y/n/?] y
+  CPU frequency transition statistics (CPU_FREQ_STAT) [Y/n/?] y
+  Default CPUFreq governor
+    1. performance (CPU_FREQ_DEFAULT_GOV_PERFORMANCE)
+  > 2. powersave (CPU_FREQ_DEFAULT_GOV_POWERSAVE)
+    3. userspace (CPU_FREQ_DEFAULT_GOV_USERSPACE)
+    4. ondemand (CPU_FREQ_DEFAULT_GOV_ONDEMAND)
+    5. conservative (CPU_FREQ_DEFAULT_GOV_CONSERVATIVE)
+  choice[1-5?]: 2
+  'performance' governor (CPU_FREQ_GOV_PERFORMANCE) [Y/n/m/?] y
+  'powersave' governor (CPU_FREQ_GOV_POWERSAVE) [Y/?] y
+  'userspace' governor for userspace frequency scaling (CPU_FREQ_GOV_USERSPACE) [Y/n/m/?] y
+  'ondemand' cpufreq policy governor (CPU_FREQ_GOV_ONDEMAND) [Y/n/m/?] y
+  'conservative' cpufreq governor (CPU_FREQ_GOV_CONSERVATIVE) [Y/n/m/?] y
+  *
+  * CPU frequency scaling drivers
+  *
+  Intel P state control (X86_INTEL_PSTATE) [N/y/?] (NEW) n
+  Intel Pentium 4 clock modulation (X86_P4_CLOCKMOD) [N/m/y/?] (NEW) n
+  *
+  * shared options
+  *
+*
+* Bus options (PCI etc.)
+*
+PCI support (PCI) [N/y/?] n
+ISA bus support on modern systems (ISA_BUS) [N/y/?] (NEW) n
+ISA-style DMA support (ISA_DMA_API) [Y/n/?] (NEW) y
+Mark VGA/VBE/EFI FB as generic system framebuffer (X86_SYSFB) [N/y/?] (NEW) n
+*
+* Binary Emulations
+*
+IA32 Emulation (IA32_EMULATION) [N/y/?] (NEW) n
+x32 ABI for 64-bit mode (X86_X32) [N/y/?] (NEW) n
+*
+* Firmware Drivers
+*
+BIOS Enhanced Disk Drive calls determine boot disk (EDD) [N/m/y/?] (NEW) n
+Add firmware-provided memory map to sysfs (FIRMWARE_MEMMAP) [N/y/?] n
+BIOS update support for DELL systems via sysfs (DELL_RBU) [N/m/y/?] (NEW) n
+Dell Systems Management Base Driver (DCDBAS) [N/m/y/?] (NEW) n
+Export DMI identification via sysfs to userspace (DMIID) [Y/n/?] (NEW) y
+DMI table support in sysfs (DMI_SYSFS) [N/m/y/?] (NEW) 
+QEMU fw_cfg device support in sysfs (FW_CFG_SYSFS) [N/m/y/?] n
+*
+* General architecture-dependent options
+*
+OProfile system profiling (OPROFILE) [M/n/y/?] m
+  OProfile multiplexing support (EXPERIMENTAL) (OPROFILE_EVENT_MULTIPLEX) [N/y/?] (NEW) 
+Kprobes (KPROBES) [Y/n/?] y
+Optimize very unlikely/likely branches (JUMP_LABEL) [Y/n/?] y
+  Static key selftest (STATIC_KEYS_SELFTEST) [N/y/?] n
+Stack Protector buffer overflow detection (STACKPROTECTOR) [Y/n/?] y
+  Strong Stack Protector (STACKPROTECTOR_STRONG) [Y/n/?] (NEW) y
+Number of bits to use for ASLR of mmap base address (ARCH_MMAP_RND_BITS) [28] (NEW) 28
+Use a virtually-mapped stack (VMAP_STACK) [Y/n/?] (NEW) y
+Perform full reference count validation at the expense of speed (REFCOUNT_FULL) [Y/n/?] y
+*
+* Memory Management options
+*
 Memory model
 > 1. Sparse Memory (SPARSEMEM_MANUAL) (NEW)
 choice[1]: 1
@@ -131,6 +381,7 @@ Miscellaneous devices (INPUT_MISC) [Y/n/?] y
   Atmel Capacitive Touch Button Driver (INPUT_ATMEL_CAPTOUCH) [N/m/y/?] n
   BMA150/SMB380 acceleration sensor support (INPUT_BMA150) [N/m/y/?] n
   NI Ettus Research USRP E3xx Button support. (INPUT_E3X0_BUTTON) [N/m/y/?] n
+  PC Speaker support (INPUT_PCSPKR) [N/m/y/?] (NEW) n
   MMA8450 - Freescale's 3-Axis, 8/12-bit Digital Accelerometer (INPUT_MMA8450) [N/m/y/?] n
   Fujitsu Lifebook Application Panel buttons (INPUT_APANEL) [N/m/y/?] (NEW) n
   Sharp GP2AP002A00F I2C Proximity/Opto sensor driver (INPUT_GP2A) [N/m/y/?] n
@@ -540,8 +791,8 @@ Backlight & LCD device support (BACKLIGHT_LCD_SUPPORT) [Y/?] y
 *
 VGA text console (VGA_CONSOLE) [Y/n/?] (NEW) y
   Enable Scrollback Buffer in System RAM (VGACON_SOFT_SCROLLBACK) [N/y/?] (NEW) n
-Initial number of console screen columns (DUMMY_CONSOLE_COLUMNS) [80] (NEW) 
-Initial number of console screen rows (DUMMY_CONSOLE_ROWS) [25] (NEW) 
+Initial number of console screen columns (DUMMY_CONSOLE_COLUMNS) [80] (NEW) 80
+Initial number of console screen rows (DUMMY_CONSOLE_ROWS) [25] (NEW) 25
 Framebuffer Console support (FRAMEBUFFER_CONSOLE) [Y/n/?] y
   Map the console to the primary display device (FRAMEBUFFER_CONSOLE_DETECT_PRIMARY) [Y/?] y
   Framebuffer Console Rotation (FRAMEBUFFER_CONSOLE_ROTATION) [Y/n/?] y
@@ -672,13 +923,7 @@ OCFS2 file system support (OCFS2_FS) [M/n/y/?] m
   OCFS2 statistics (OCFS2_FS_STATS) [Y/n/?] y
   OCFS2 logging support (OCFS2_DEBUG_MASKLOG) [Y/n/?] y
   OCFS2 expensive checks (OCFS2_DEBUG_FS) [N/y/?] n
-Btrfs filesystem support (BTRFS_FS) [M/n/y/?] m
-  Btrfs POSIX Access Control Lists (BTRFS_FS_POSIX_ACL) [Y/n/?] y
-  Btrfs with integrity check tool compiled in (DANGEROUS) (BTRFS_FS_CHECK_INTEGRITY) [N/y/?] n
-  Btrfs will run sanity tests upon loading (BTRFS_FS_RUN_SANITY_TESTS) [N/y/?] n
-  Btrfs debugging support (BTRFS_DEBUG) [N/y/?] n
-  Btrfs assert support (BTRFS_ASSERT) [N/y/?] n
-  Btrfs with the ref verify tool compiled in (BTRFS_FS_REF_VERIFY) [N/y/?] n
+Btrfs filesystem support (BTRFS_FS) [N/m/y/?] n
 NILFS2 file system support (NILFS2_FS) [M/n/y/?] m
 F2FS filesystem support (F2FS_FS) [Y/n/m/?] y
   F2FS Status Information (F2FS_STAT_FS) [Y/n/?] y
@@ -897,7 +1142,7 @@ Extend memmap on extra space for more information on page (PAGE_EXTENSION) [N/y/
 Debug page memory allocations (DEBUG_PAGEALLOC) [N/y/?] n
 Poison pages after freeing (PAGE_POISONING) [N/y/?] n
 Enable tracepoint to track down page reference manipulation (DEBUG_PAGE_REF) [N/y/?] n
-Testcase for the marking rodata read-only (DEBUG_RODATA_TEST) [N/y/?] n
+Testcase for the marking rodata read-only (DEBUG_RODATA_TEST) [N/y/?] (NEW) n
 Debug object operations (DEBUG_OBJECTS) [N/y/?] n
 SLUB debugging on by default (SLUB_DEBUG_ON) [N/y/?] n
 Enable SLUB performance statistics (SLUB_STATS) [N/y/?] n

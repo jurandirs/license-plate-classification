@@ -29,7 +29,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcmrpi_defconfig
 # Using menuconfig
 # Once you've got everything set up and ready to go, you can compile and run the 
 # menuconfig utility as follows:
-make menuconfig
+# make menuconfig
 
 # If you're cross-compiling,:
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
