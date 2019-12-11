@@ -1,8 +1,6 @@
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-sudo apt install -y nodejs
+curl -o node-v9.7.1-linux-armv6l.tar.gz https://nodejs.org/dist/v9.7.1/node-v9.7.1-linux-armv6l.tar.gz
+tar -xzf node-v9.7.1-linux-armv6l.tar.gz
+sudo cp -r node-v9.7.1-linux-armv6l/* /usr/local/
 node -v
-sudo apt install npm
-sudo npm install
-sudo npm cache clean
-sudo npm install -g npm
+npm -v
 sudo npm install pi-camera
