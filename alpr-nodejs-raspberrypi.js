@@ -24,10 +24,11 @@ setInterval(function() {
             var cmd = 'alpr -c us -n 1 --json ' + path;
 
             exec(cmd, function(error, stdout, stderr) {
-
-                var data = JSON.parse(stdout);
-
-                if (data.results.length > 0) {
+		
+		if (stdout.length > 0)
+                    var data = JSON.parse(stdout);
+		console.log(stdout)
+                if (data != undefined && data.results.length > 0) {
                     console.log(data.results[0].plate);
                 } else {
                     console.log("\n\n\nNo license plate found.\n\n");
