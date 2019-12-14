@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const telegraToken = '715749096:AAEnlGKIjCfU8mKZd7ILNp2PUQC8vyNfEu8';
+const telegraToken = '';
 const TelegramBot = require('node-telegram-bot-api');
 const bot = new TelegramBot(telegraToken, {polling: true});
 const placaOld = new RegExp("[a-zA-Z]{3}[0-9]{4}");
